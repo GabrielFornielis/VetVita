@@ -1,0 +1,27 @@
+{
+  "name": "vetvita",
+  "version": "1.0.0",
+  "description": "Sistema para gerenciamento veterinário",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielFornielis/VetVita.git"
+  },
+  "keywords": [
+    "veterinário",
+    "petshop",
+    "sistema",
+    "nodejs",
+    "api",
+    "vetvita"
+  ],
+  "author": "Equipe VetVita (Gabriel Neves, ArthurHenrique, Suzana e Bruno Regolin)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielFornielis/VetVita/issues"
+  },
+  "homepage": "https://github.com/GabrielFornielis/VetVita#readme"
+}
