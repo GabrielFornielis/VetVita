@@ -113,6 +113,8 @@ if (btnCadastro) {
 // Time slot selection
 document.querySelectorAll('.vv-time-slot').forEach(slot => {
   slot.addEventListener('click', function() {
+    if (this.classList.contains('empty')) return;
+    
     // Remove selection from all slots
     document.querySelectorAll('.vv-time-slot').forEach(s => {
       s.style.background = '#fff';

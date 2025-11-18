@@ -97,11 +97,15 @@
         <h4 class="vv-form-label">Informe seu nome</h4>
         <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
         
-        <h4 class="vv-form-label">Informe seu CPF</h4>
-        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+        <div class="vv-checkbox-group">
+          <input type="checkbox" id="cpf-check">
+          <label for="cpf-check">Informe seu CPF</label>
+        </div>
         
-        <h4 class="vv-form-label">Crie uma senha</h4>
-        <input type="password" id="senha" name="senha" placeholder="Sua senha">
+        <div class="vv-checkbox-group">
+          <input type="checkbox" id="senha-check">
+          <label for="senha-check">Crie uma senha</label>
+        </div>
         
         <button class="vv-btn-primary" id="btnCadastro">Cadastre-se já!</button>
       </div>
@@ -113,7 +117,7 @@
       </div>
 
       <div class="vv-login-link">
-        <p>Já tem uma conta? <a href="#" data-page="vetvita-login">Entre aqui.</a></p>
+        <p>Já tem uma conta? <a href="#" class="vv-link">Entre aqui.</a></p>
       </div>
     </div>
 
@@ -124,13 +128,13 @@
         
         <div class="vv-service-grid">
           <div class="vv-service-card">
-            <h3>Consulta clínica geral</h3>
-            <p>Avaliação completa da saúde do pet.</p>
+            <h3>Consulta clínica<br>geral</h3>
+            <p>Avaliação completa<br>da saúde do pet.</p>
           </div>
           
           <div class="vv-service-card">
-            <h3>Consulta de emergência</h3>
-            <p>Atendimento rápido para casos urgentes.</p>
+            <h3>Consulta de<br>emergência</h3>
+            <p>Atendimento rápido<br>para casos urgentes.</p>
           </div>
         </div>
       </div>
@@ -142,13 +146,13 @@
         
         <div class="vv-service-grid">
           <div class="vv-service-card">
-            <h3>Exame de sangue completo</h3>
-            <p>Para detectar interções e avaliar a saúde geral.</p>
+            <h3>Exame de sangue<br>completo</h3>
+            <p>Para detectar interções e<br>avaliar a saúde geral.</p>
           </div>
           
           <div class="vv-service-card">
-            <h3>Ultrassorografia abdominal</h3>
-            <p>Visualização interna de órgãos.</p>
+            <h3>Ultrassorografia<br>abdominal</h3>
+            <p>Visualização interna<br>de órgãos.</p>
           </div>
         </div>
       </div>
@@ -161,13 +165,13 @@
         <div class="vv-service-grid">
           <div class="vv-service-card">
             <h3>Vacina V8 ou V10</h3>
-            <p>Proteção conta doenças vitais graves.</p>
+            <p>Proteção conta doenças<br>vitais graves.</p>
             <button class="vv-btn-secondary" data-service="v8v10">Agendar</button>
           </div>
           
           <div class="vv-service-card">
             <h3>Vacina aritmática</h3>
-            <p>Obrigatório e essencial para todos os pets.</p>
+            <p>Obrigatório e essencial<br>para todos os pets.</p>
             <button class="vv-btn-secondary">Agendar</button>
           </div>
         </div>
@@ -187,17 +191,19 @@
         <div class="vv-time-slot">9:00 - 25/11</div>
         <div class="vv-time-slot">11:30 - 23/11</div>
         <div class="vv-time-slot">14:40 - 25/11</div>
+        <div class="vv-time-slot empty"></div>
       </div>
 
       <div class="vv-section-divider"></div>
 
       <h3 class="vv-form-label">Selecione seu pet</h3>
-      <select class="vv-select">
-        <option>Selecione seu pet</option>
-        <option>Rex</option>
-        <option>Luna</option>
-        <option>Thor</option>
-      </select>
+      
+      <div class="vv-pet-selection">
+        <div class="vv-pet-option">
+          <input type="radio" id="pet1" name="pet" checked>
+          <label for="pet1">Selecione seu pet</label>
+        </div>
+      </div>
 
       <div class="vv-price-section">
         <p class="vv-price">Valor do serviço: R$ 2</p>

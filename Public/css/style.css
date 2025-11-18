@@ -9,6 +9,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f4f4f4;
   color: #003366;
+  line-height: 1.4;
 }
 
 .hidden {
@@ -204,9 +205,9 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px;
+  padding: 14px 16px;
   background: #e7cda2;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .vv-brand {
@@ -216,27 +217,33 @@ nav a {
 }
 
 .vv-brand img {
-  height: 36px;
+  height: 32px;
+}
+
+.vv-brand strong {
+  font-size: 18px;
+  color: #3a5d2b;
 }
 
 .back-to-zoone {
-  background: #8a5a2a;
-  color: white;
-  border: none;
-  padding: 8px 12px;
+  background: transparent;
+  color: #3a5d2b;
+  border: 1px solid #3a5d2b;
+  padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 14px;
 }
 
 .vetvita-page {
-  padding: 16px;
-  max-width: 600px;
+  padding: 20px 16px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .vv-title {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 800;
   margin-bottom: 16px;
   text-align: left;
@@ -245,18 +252,19 @@ nav a {
 
 .vv-sub {
   color: #556b3a;
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .vv-section-divider {
-  height: 1px;
-  background: rgba(90, 52, 20, 0.2);
-  margin: 20px 0;
+  height: 2px;
+  background: rgba(90, 52, 20, 0.15);
+  margin: 24px 0;
 }
 
 .vv-section-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
   color: #3a5d2b;
@@ -264,26 +272,49 @@ nav a {
 
 .vv-section-sub {
   color: #556b3a;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 16px;
+  font-size: 14px;
 }
 
 .vv-form-label {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   margin-bottom: 8px;
   color: #3a5d2b;
+  display: block;
 }
 
-.vv-form input,
-.vv-select {
+.vv-form input[type="text"],
+.vv-form input[type="password"] {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 16px;
   background: #fff;
-  font-size: 16px;
+  font-size: 15px;
+}
+
+/* Checkbox groups como nas imagens */
+.vv-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.vv-checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #3a5d2b;
+}
+
+.vv-checkbox-group label {
+  font-size: 15px;
+  color: #3a5d2b;
+  font-weight: 600;
 }
 
 .vv-btn-primary {
@@ -295,7 +326,7 @@ nav a {
   border: none;
   font-weight: 700;
   font-size: 16px;
-  margin-bottom: 16px;
+  margin: 16px 0;
   cursor: pointer;
 }
 
@@ -307,7 +338,9 @@ nav a {
   border: none;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  width: 100%;
 }
 
 .vv-social-login {
@@ -323,6 +356,7 @@ nav a {
   border: 1px solid rgba(0, 0, 0, 0.2);
   font-weight: 600;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .vv-login-link {
@@ -330,7 +364,12 @@ nav a {
   margin: 20px 0;
 }
 
-.vv-login-link a {
+.vv-login-link p {
+  color: #556b3a;
+  font-size: 14px;
+}
+
+.vv-link {
   color: #a25612;
   text-decoration: none;
   font-weight: 600;
@@ -342,16 +381,18 @@ nav a {
 }
 
 .vv-service-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
   color: #3a5d2b;
+  text-align: center;
 }
 
 .vv-service-description {
   color: #556b3a;
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: 16px;
+  font-size: 14px;
 }
 
 .vv-service-grid {
@@ -365,6 +406,7 @@ nav a {
   padding: 16px;
   border-radius: 12px;
   border: 2px solid rgba(162, 86, 18, 0.12);
+  text-align: center;
 }
 
 .vv-service-card h3 {
@@ -372,15 +414,17 @@ nav a {
   font-weight: 700;
   margin-bottom: 8px;
   color: #3a5d2b;
+  line-height: 1.3;
 }
 
 .vv-service-card p {
   color: #556b3a;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 8px;
+  font-size: 14px;
 }
 
-/* Time grid */
+/* Time grid como tabela */
 .vv-time-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -389,33 +433,67 @@ nav a {
 }
 
 .vv-time-slot {
-  padding: 12px;
+  padding: 12px 8px;
   border: 2px solid rgba(162, 86, 18, 0.3);
   border-radius: 8px;
   text-align: center;
   font-weight: 600;
   cursor: pointer;
   background: #fff;
+  font-size: 14px;
 }
 
-.vv-time-slot:hover {
+.vv-time-slot.empty {
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.vv-time-slot:hover:not(.empty) {
   background: #f0e6d2;
+}
+
+/* Seleção de pet */
+.vv-pet-selection {
+  margin-bottom: 20px;
+}
+
+.vv-pet-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid rgba(162, 86, 18, 0.12);
+}
+
+.vv-pet-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #3a5d2b;
+}
+
+.vv-pet-option label {
+  font-size: 15px;
+  color: #3a5d2b;
+  font-weight: 600;
 }
 
 .vv-price-section {
   background: #fff;
-  padding: 16px;
+  padding: 20px;
   border-radius: 12px;
   border: 2px solid rgba(162, 86, 18, 0.12);
   margin-top: 20px;
+  text-align: center;
 }
 
 .vv-price {
   font-size: 18px;
   font-weight: 700;
   color: #3a5d2b;
-  margin-bottom: 12px;
-  text-align: center;
+  margin-bottom: 16px;
 }
 
 .vv-footer {
@@ -424,6 +502,7 @@ nav a {
   color: #7a5a2f;
   background: #e7cda2;
   margin-top: 40px;
+  font-size: 14px;
 }
 
 /* RESPONSIVO */
@@ -464,5 +543,25 @@ nav a {
   
   .vv-service-card {
     flex: 1;
+  }
+}
+
+/* Mobile específico para VetVita */
+@media (max-width: 480px) {
+  .vetvita-page {
+    padding: 16px 12px;
+  }
+  
+  .vv-title {
+    font-size: 24px;
+  }
+  
+  .vv-service-title {
+    font-size: 18px;
+  }
+  
+  .vv-time-slot {
+    padding: 10px 6px;
+    font-size: 13px;
   }
 }
