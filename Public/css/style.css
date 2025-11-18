@@ -1,123 +1,468 @@
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body { 
-    font-family: Arial, sans-serif; 
-    background: #f4f4f4;
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #003366;
 }
 
-/* ===== CABEÇALHO ===== */
+.hidden {
+  display: none !important;
+}
+
+/* ZOONE (web-like even on mobile) */
+#main-zoone {
+  min-height: 100vh;
+}
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #caf0f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #e8d4b2;
 }
-header img {
-    height: 50px;
+
+header img.logo {
+  height: 48px;
 }
+
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #003366;
-    font-weight: bold;
+  font-weight: 700;
+  text-decoration: none;
+  color: #8a5a2a;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
 }
+
 .perfil-icon {
-    width: 40px;
-    height: 40px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* ===== SEÇÃO PRINCIPAL ===== */
+/* HERO */
 .hero {
-    width: 100%;
-    height: 300px;
-    background: url('../img/Banner.jpg') center/cover;
-    padding: 50px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  background: url("/img/Banner.jpg") center/cover no-repeat;
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* ===== SOBRE ===== */
+/* CONTAINERS */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
 .sobre {
-    padding: 40px;
-    background: white;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  margin-top: 18px;
 }
+
 .sobre p {
-    margin-top: 10px;
-    line-height: 1.6;
-    color: #03045e;
+  line-height: 1.6;
+  color: #333;
 }
 
-/* ===== PROJETO ===== */
+/* PROJETO / DOWNLOAD */
 .projeto {
-    padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+  background: #fff;
+  margin-top: 18px;
+  border-radius: 8px;
+  min-height: 50vh;
 }
-.projeto h1 {
-    color: #03045e;
-    margin-bottom: 20px;
-    font-size: 40px;
-}
+
 .vetvita-logo {
-    width: 320px;
-    display: block;
-    margin: 0 auto 60px auto;
+  width: 220px;
+  display: block;
+  margin: 0 auto 10px auto;
 }
+
 .descricao {
-    max-width: 1100px;
-    margin: auto;
-    line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
 }
 
-/* ===== DOWNLOAD (BOTÃO + IMAGENS LADO A LADO) ===== */
 .download-section {
-    margin-top: 20px;          /* antes estava muito grande */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;                 /* diminui o espaço entre eles */
-    padding: 0 40px;           /* mantém alinhamento com o resto da página */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  background: #fff;
+  border-radius: 8px;
 }
 
-/* Coluna do botão */
-.download-col-esq {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start; /* botão fica mais próximo da esquerda */
-}
-
-/* Coluna das imagens */
-.download-col-dir {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* Botão */
+/* botão download */
 .download-btn {
-    display: inline-block;
-    padding: 15px 35px;
-    background: #007bff;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: #0a54a3;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
 }
 
-/* Imagens alinhadas à direita */
+.download-btn img {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+
+/* imagens */
 .imagens {
-    display: flex;
-    justify-content: flex-end;
-    gap: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .imagens img {
-    width: 200px;
-    border-radius: 8px;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* FOOTER ZOONE */
+.footer {
+  background: #dfeff6;
+  padding: 20px;
+  margin-top: 22px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footer-icons img {
+  width: 30px;
+  margin-left: 12px;
+}
+
+/* Button Install */
+.install-area {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-install {
+  background: #6b8f4a;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+/* VETVITA (app UI) */
+#vetvita-app {
+  min-height: 100vh;
+  background: #faf3df;
+  color: #3a5d2b;
+}
+
+.vv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  background: #e7cda2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.vv-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.vv-brand img {
+  height: 36px;
+}
+
+.back-to-zoone {
+  background: #8a5a2a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vetvita-page {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.vv-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.vv-sub {
+  color: #556b3a;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.vv-section-divider {
+  height: 1px;
+  background: rgba(90, 52, 20, 0.2);
+  margin: 20px 0;
+}
+
+.vv-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #3a5d2b;
+}
+
+.vv-section-sub {
+  color: #556b3a;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.vv-form-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #3a5d2b;
+}
+
+.vv-form input,
+.vv-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 16px;
+  background: #fff;
+  font-size: 16px;
+}
+
+.vv-btn-primary {
+  width: 100%;
+  background: #a25612;
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.vv-btn-secondary {
+  background: #6b8f4a;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.vv-social-login {
+  margin: 20px 0;
+}
+
+.vv-btn-google {
+  width: 100%;
+  background: #fff;
+  color: #333;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vv-login-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.vv-login-link a {
+  color: #a25612;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Serviços */
+.vv-service-category {
+  margin-bottom: 24px;
+}
+
+.vv-service-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #3a5d2b;
+}
+
+.vv-service-description {
+  color: #556b3a;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.vv-service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vv-service-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(162, 86, 18, 0.12);
+}
+
+.vv-service-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #3a5d2b;
+}
+
+.vv-service-card p {
+  color: #556b3a;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* Time grid */
+.vv-time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.vv-time-slot {
+  padding: 12px;
+  border: 2px solid rgba(162, 86, 18, 0.3);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+}
+
+.vv-time-slot:hover {
+  background: #f0e6d2;
+}
+
+.vv-price-section {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(162, 86, 18, 0.12);
+  margin-top: 20px;
+}
+
+.vv-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3a5d2b;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.vv-footer {
+  padding: 20px;
+  text-align: center;
+  color: #7a5a2f;
+  background: #e7cda2;
+  margin-top: 40px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .hero {
+    font-size: 26px;
+    padding: 36px 18px;
+    min-height: 40vh;
+  }
+  
+  nav {
+    gap: 8px;
+  }
+  
+  .download-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imagens {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vetvita-logo {
+    width: 160px;
+  }
+  
+  .vv-time-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .vv-service-grid {
+    flex-direction: row;
+  }
+  
+  .vv-service-card {
+    flex: 1;
+  }
 }
