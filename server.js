@@ -7,18 +7,21 @@ const PORT = 3000;
 // Servir arquivos estáticos da pasta Public
 app.use(express.static(path.join(__dirname, 'Public')));
 
+// Servir arquivos da raiz (manifest e service-worker)
+app.use(express.static(path.join(__dirname)));
+
 // Rota principal
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
-// manifest e service worker
+// Rotas específicas para manifest e service-worker (fallback)
 app.get('/manifest.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Public', 'manifest.json'));
+  res.sendFile(path.join(__dirname, 'manifest.json'));
 });
 
 app.get('/service-worker.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Public', 'service-worker.js'));
+  res.sendFile(path.join(__dirname, 'service-worker.js'));
 });
 
 // Iniciar servidor HTTP
