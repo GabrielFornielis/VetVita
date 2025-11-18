@@ -15,8 +15,8 @@ const ASSETS = [
   '/img/facebook.svg',
   '/img/instagram.svg',
   '/img/whatsapp.svg',
-  '/img/icons/IcoVetVita-192x192.png',
-  '/img/icons/IcoVetVita-512x512.png'
+  '/img/icons/IcoVetVita192x192.png',
+  '/img/icons/IcoVetVita512x512.png'
 ];
 
 self.addEventListener('install', e => {
