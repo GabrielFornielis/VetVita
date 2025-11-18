@@ -1,11 +1,22 @@
-const CACHE_NAME = 'vetvita-v4';
+const CACHE_NAME = 'vetvita-v5';
 const ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
   '/css/style.css',
-  '/js/script.js'
-  // Removi as imagens para testar primeiro
+  '/js/script.js',
+  '/img/LogoZoone.png',
+  '/img/LogoVetVita(ComFundo).png',
+  '/img/Dowload.png',
+  '/img/WebVetVita.png',
+  '/img/MobileVetVita.png',
+  '/img/Banner.jpg',
+  '/img/icon.png',
+  '/img/facebook.svg',
+  '/img/instagram.svg',
+  '/img/whatsapp.svg',
+  '/img/icons/IcoVetVita192x192.png',  // SEM hífen
+  '/img/icons/IcoVetVita512x512.png'   // SEM hífen
 ];
 
 self.addEventListener('install', e => {
@@ -13,23 +24,12 @@ self.addEventListener('install', e => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Cache aberto, adicionando recursos...');
-        // Usando Promise.allSettled para não falhar se algum arquivo não existir
-        return Promise.allSettled(
-          ASSETS.map(asset => {
-            return cache.add(asset).catch(err => {
-              console.warn(`Não foi possível cachear: ${asset}`, err);
-              return null;
-            });
-          })
-        );
+        return cache.addAll(ASSETS);
       })
-      .then(() => {
-        console.log('Todos os recursos processados');
-        return self.skipWaiting();
-      })
+      .then(() => self.skipWaiting())
       .catch(err => {
         console.error('Erro durante instalação:', err);
-        return self.skipWaiting(); // Continua mesmo com erro
+        return self.skipWaiting();
       })
   );
 });
@@ -39,10 +39,7 @@ self.addEventListener('activate', e => {
     caches.keys().then(keys =>
       Promise.all(
         keys.filter(k => k !== CACHE_NAME)
-          .map(k => {
-            console.log('Deletando cache antigo:', k);
-            return caches.delete(k);
-          })
+          .map(k => caches.delete(k))
       )
     ).then(() => self.clients.claim())
   );
@@ -51,13 +48,6 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request)
-      .then(response => {
-        // Retorna do cache se encontrou, senão faz fetch
-        return response || fetch(e.request);
-      })
-      .catch(err => {
-        console.warn('Erro no fetch:', err);
-        return fetch(e.request); // Fallback para fetch normal
-      })
+      .then(response => response || fetch(e.request))
   );
 });
