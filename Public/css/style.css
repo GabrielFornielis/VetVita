@@ -194,7 +194,7 @@ nav a {
   cursor: pointer;
 }
 
-/* VETVITA (app UI) */
+/* VETVITA (app UI) - PÁGINA ÚNICA */
 #vetvita-app {
   min-height: 100vh;
   background: #faf3df;
@@ -208,6 +208,9 @@ nav a {
   padding: 14px 16px;
   background: #e7cda2;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .vv-brand {
@@ -236,10 +239,26 @@ nav a {
   font-size: 14px;
 }
 
-.vetvita-page {
-  padding: 20px 16px;
+/* Página única do VetVita */
+.vetvita-single-page {
   max-width: 400px;
   margin: 0 auto;
+  padding: 0;
+}
+
+/* Seções da página única */
+.vv-hero-section,
+.vv-services-section,
+.vv-agendamento-section {
+  padding: 24px 16px;
+}
+
+.vv-services-section {
+  background: #f8f4e8;
+}
+
+.vv-agendamento-section {
+  background: #faf3df;
 }
 
 .vv-title {
@@ -501,7 +520,7 @@ nav a {
   text-align: center;
   color: #7a5a2f;
   background: #e7cda2;
-  margin-top: 40px;
+  margin-top: 0;
   font-size: 14px;
 }
 
@@ -548,8 +567,10 @@ nav a {
 
 /* Mobile específico para VetVita */
 @media (max-width: 480px) {
-  .vetvita-page {
-    padding: 16px 12px;
+  .vv-hero-section,
+  .vv-services-section,
+  .vv-agendamento-section {
+    padding: 20px 12px;
   }
   
   .vv-title {

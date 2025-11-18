@@ -71,7 +71,7 @@
     </footer>
   </div>
 
-  <!-- Página VetVita (inicialmente oculta) -->
+  <!-- Página VetVita ÚNICA (inicialmente oculta) -->
   <div id="vetvita-app" class="hidden">
     <div class="vv-header">
       <div class="vv-brand">
@@ -81,134 +81,137 @@
       <button class="back-to-zoone" data-page="home">← Voltar</button>
     </div>
 
-    <!-- Página 1: Cadastro -->
-    <div id="vetvita-page1" class="vetvita-page">
-      <h1 class="vv-title">Seu pet em<br>boas patas.</h1>
-      <p class="vv-sub">Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade. Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.</p>
+    <!-- Página ÚNICA do VetVita com todas as seções -->
+    <div class="vetvita-single-page">
+      <!-- Seção 1: Hero/Cadastro -->
+      <section class="vv-hero-section">
+        <h1 class="vv-title">Seu pet em<br>boas patas.</h1>
+        <p class="vv-sub">Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade. Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.</p>
 
-      <div class="vv-section-divider"></div>
+        <div class="vv-section-divider"></div>
 
-      <h3 class="vv-section-title">Cadastre-se para acessar nossos serviços completos.</h3>
-      <p class="vv-section-sub">Caso ainda não esteja nos filho, considere se cadastrar em nós o site para ter atresso a todos os nossos serviços e agendar consultas, ev arres e muito mais.</p>
+        <h3 class="vv-section-title">Cadastre-se para acessar nossos serviços completos.</h3>
+        <p class="vv-section-sub">Caso ainda não esteja nos filho, considere se cadastrar em nós o site para ter atresso a todos os nossos serviços e agendar consultas, ev arres e muito mais.</p>
 
-      <div class="vv-section-divider"></div>
+        <div class="vv-section-divider"></div>
 
-      <div class="vv-form">
-        <h4 class="vv-form-label">Informe seu nome</h4>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
-        
-        <div class="vv-checkbox-group">
-          <input type="checkbox" id="cpf-check">
-          <label for="cpf-check">Informe seu CPF</label>
-        </div>
-        
-        <div class="vv-checkbox-group">
-          <input type="checkbox" id="senha-check">
-          <label for="senha-check">Crie uma senha</label>
-        </div>
-        
-        <button class="vv-btn-primary" id="btnCadastro">Cadastre-se já!</button>
-      </div>
-
-      <div class="vv-social-login">
-        <button class="vv-btn-google">
-          Continue com o Google
-        </button>
-      </div>
-
-      <div class="vv-login-link">
-        <p>Já tem uma conta? <a href="#" class="vv-link">Entre aqui.</a></p>
-      </div>
-    </div>
-
-    <!-- Página 2: Serviços -->
-    <div id="vetvita-page2" class="vetvita-page hidden">
-      <div class="vv-service-category">
-        <h2 class="vv-service-title">Consultas veterinárias</h2>
-        
-        <div class="vv-service-grid">
-          <div class="vv-service-card">
-            <h3>Consulta clínica<br>geral</h3>
-            <p>Avaliação completa<br>da saúde do pet.</p>
+        <div class="vv-form">
+          <h4 class="vv-form-label">Informe seu nome</h4>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+          
+          <div class="vv-checkbox-group">
+            <input type="checkbox" id="cpf-check">
+            <label for="cpf-check">Informe seu CPF</label>
           </div>
           
-          <div class="vv-service-card">
-            <h3>Consulta de<br>emergência</h3>
-            <p>Atendimento rápido<br>para casos urgentes.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="vv-section-divider"></div>
-
-      <div class="vv-service-category">
-        <h2 class="vv-service-title">Exames especializados</h2>
-        
-        <div class="vv-service-grid">
-          <div class="vv-service-card">
-            <h3>Exame de sangue<br>completo</h3>
-            <p>Para detectar interções e<br>avaliar a saúde geral.</p>
+          <div class="vv-checkbox-group">
+            <input type="checkbox" id="senha-check">
+            <label for="senha-check">Crie uma senha</label>
           </div>
           
-          <div class="vv-service-card">
-            <h3>Ultrassorografia<br>abdominal</h3>
-            <p>Visualização interna<br>de órgãos.</p>
-          </div>
+          <button class="vv-btn-primary" id="btnCadastro">Cadastre-se já!</button>
         </div>
-      </div>
 
-      <div class="vv-section-divider"></div>
+        <div class="vv-social-login">
+          <button class="vv-btn-google">
+            Continue com o Google
+          </button>
+        </div>
 
-      <div class="vv-service-category">
-        <h2 class="vv-service-title">Vacinas Comuns</h2>
-        
-        <div class="vv-service-grid">
-          <div class="vv-service-card">
-            <h3>Vacina V8 ou V10</h3>
-            <p>Proteção conta doenças<br>vitais graves.</p>
-            <button class="vv-btn-secondary" data-service="v8v10">Agendar</button>
-          </div>
+        <div class="vv-login-link">
+          <p>Já tem uma conta? <a href="#" class="vv-link">Entre aqui.</a></p>
+        </div>
+      </section>
+
+      <!-- Seção 2: Serviços -->
+      <section class="vv-services-section">
+        <div class="vv-service-category">
+          <h2 class="vv-service-title">Consultas veterinárias</h2>
           
-          <div class="vv-service-card">
-            <h3>Vacina aritmática</h3>
-            <p>Obrigatório e essencial<br>para todos os pets.</p>
-            <button class="vv-btn-secondary">Agendar</button>
+          <div class="vv-service-grid">
+            <div class="vv-service-card">
+              <h3>Consulta clínica<br>geral</h3>
+              <p>Avaliação completa<br>da saúde do pet.</p>
+            </div>
+            
+            <div class="vv-service-card">
+              <h3>Consulta de<br>emergência</h3>
+              <p>Atendimento rápido<br>para casos urgentes.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Página 3: Agendamento V8/V10 -->
-    <div id="vetvita-page3" class="vetvita-page hidden">
-      <h2 class="vv-service-title">Vacina V8 ou V10</h2>
-      <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente assencial na rotina de cuidado veterinários. Ela protege os cães conta alto doenças graves, ajudando a prevenir infecções contagiosas e potencialmente ratais.</p>
+        <div class="vv-section-divider"></div>
 
-      <div class="vv-section-divider"></div>
-
-      <h3 class="vv-form-label">Selecione a data e horário disponíveis:</h3>
-      
-      <div class="vv-time-grid">
-        <div class="vv-time-slot">9:00 - 25/11</div>
-        <div class="vv-time-slot">11:30 - 23/11</div>
-        <div class="vv-time-slot">14:40 - 25/11</div>
-        <div class="vv-time-slot empty"></div>
-      </div>
-
-      <div class="vv-section-divider"></div>
-
-      <h3 class="vv-form-label">Selecione seu pet</h3>
-      
-      <div class="vv-pet-selection">
-        <div class="vv-pet-option">
-          <input type="radio" id="pet1" name="pet" checked>
-          <label for="pet1">Selecione seu pet</label>
+        <div class="vv-service-category">
+          <h2 class="vv-service-title">Exames especializados</h2>
+          
+          <div class="vv-service-grid">
+            <div class="vv-service-card">
+              <h3>Exame de sangue<br>completo</h3>
+              <p>Para detectar interções e<br>avaliar a saúde geral.</p>
+            </div>
+            
+            <div class="vv-service-card">
+              <h3>Ultrassorografia<br>abdominal</h3>
+              <p>Visualização interna<br>de órgãos.</p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="vv-price-section">
-        <p class="vv-price">Valor do serviço: R$ 2</p>
-        <button class="vv-btn-primary">Agendar</button>
-      </div>
+        <div class="vv-section-divider"></div>
+
+        <div class="vv-service-category">
+          <h2 class="vv-service-title">Vacinas Comuns</h2>
+          
+          <div class="vv-service-grid">
+            <div class="vv-service-card">
+              <h3>Vacina V8 ou V10</h3>
+              <p>Proteção conta doenças<br>vitais graves.</p>
+              <button class="vv-btn-secondary vv-agendar-btn" data-service="v8v10">Agendar</button>
+            </div>
+            
+            <div class="vv-service-card">
+              <h3>Vacina aritmática</h3>
+              <p>Obrigatório e essencial<br>para todos os pets.</p>
+              <button class="vv-btn-secondary">Agendar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 3: Agendamento V8/V10 -->
+      <section class="vv-agendamento-section">
+        <h2 class="vv-service-title">Vacina V8 ou V10</h2>
+        <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente assencial na rotina de cuidado veterinários. Ela protege os cães conta alto doenças graves, ajudando a prevenir infecções contagiosas e potencialmente ratais.</p>
+
+        <div class="vv-section-divider"></div>
+
+        <h3 class="vv-form-label">Selecione a data e horário disponíveis:</h3>
+        
+        <div class="vv-time-grid">
+          <div class="vv-time-slot">9:00 - 25/11</div>
+          <div class="vv-time-slot">11:30 - 23/11</div>
+          <div class="vv-time-slot">14:40 - 25/11</div>
+          <div class="vv-time-slot empty"></div>
+        </div>
+
+        <div class="vv-section-divider"></div>
+
+        <h3 class="vv-form-label">Selecione seu pet</h3>
+        
+        <div class="vv-pet-selection">
+          <div class="vv-pet-option">
+            <input type="radio" id="pet1" name="pet" checked>
+            <label for="pet1">Selecione seu pet</label>
+          </div>
+        </div>
+
+        <div class="vv-price-section">
+          <p class="vv-price">Valor do serviço: R$ 2</p>
+          <button class="vv-btn-primary">Agendar</button>
+        </div>
+      </section>
     </div>
 
     <div class="vv-footer">© VetVita todos os direitos reservados</div>

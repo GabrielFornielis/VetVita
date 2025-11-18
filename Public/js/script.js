@@ -4,11 +4,6 @@ function showPage(pageId) {
   document.getElementById('main-zoone').classList.add('hidden');
   document.getElementById('vetvita-app').classList.add('hidden');
   
-  // Hide all VetVita sub-pages
-  document.querySelectorAll('.vetvita-page').forEach(page => {
-    page.classList.add('hidden');
-  });
-  
   // Show selected page
   if (pageId === 'home' || pageId === 'projetos' || pageId === 'contato') {
     document.getElementById('main-zoone').classList.remove('hidden');
@@ -21,13 +16,7 @@ function showPage(pageId) {
     }
   } else if (pageId === 'vetvita') {
     document.getElementById('vetvita-app').classList.remove('hidden');
-    document.getElementById('vetvita-page1').classList.remove('hidden');
-  } else if (pageId === 'vetvita-services') {
-    document.getElementById('vetvita-app').classList.remove('hidden');
-    document.getElementById('vetvita-page2').classList.remove('hidden');
-  } else if (pageId === 'v8v10') {
-    document.getElementById('vetvita-app').classList.remove('hidden');
-    document.getElementById('vetvita-page3').classList.remove('hidden');
+    window.scrollTo(0, 0);
   }
 }
 
@@ -47,13 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const page = this.getAttribute('data-page');
       showPage(page);
-    });
-  });
-  
-  // Set up service buttons in VetVita
-  document.querySelectorAll('[data-service="v8v10"]').forEach(btn => {
-    btn.addEventListener('click', function() {
-      showPage('v8v10');
     });
   });
   
@@ -105,8 +87,11 @@ if ('serviceWorker' in navigator) {
 const btnCadastro = document.getElementById('btnCadastro');
 if (btnCadastro) {
   btnCadastro.addEventListener('click', () => {
-    alert('Cadastro realizado com sucesso! Redirecionando para serviços...');
-    showPage('vetvita-services');
+    alert('Cadastro realizado com sucesso!');
+    // Rola para a seção de serviços após cadastro
+    document.querySelector('.vv-services-section').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   });
 }
 
@@ -124,5 +109,15 @@ document.querySelectorAll('.vv-time-slot').forEach(slot => {
     // Select this slot
     this.style.background = '#e7cda2';
     this.style.borderColor = '#a25612';
+  });
+});
+
+// Botão agendar V8/V10
+document.querySelectorAll('.vv-agendar-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    // Rola para a seção de agendamento
+    document.querySelector('.vv-agendamento-section').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   });
 });
