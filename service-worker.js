@@ -1,6 +1,7 @@
-const CACHE_NAME = 'vetvita-v5';
+const CACHE_NAME = 'vetvita-v7';
 const ASSETS = [
   '/',
+  '/?source=pwa',
   '/index.html',
   '/manifest.json',
   '/css/style.css',
@@ -15,8 +16,8 @@ const ASSETS = [
   '/img/facebook.svg',
   '/img/instagram.svg',
   '/img/whatsapp.svg',
-  '/img/icons/IcoVetVita192x192.png',  // SEM hífen
-  '/img/icons/IcoVetVita512x512.png'   // SEM hífen
+  '/img/icons/IcoVetVita192x192.png',
+  '/img/icons/IcoVetVita512x512.png'
 ];
 
 self.addEventListener('install', e => {

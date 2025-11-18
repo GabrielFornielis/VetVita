@@ -31,6 +31,14 @@ function showPage(pageId) {
   }
 }
 
+// Detect if app is running as PWA
+function isPWA() {
+  return window.matchMedia('(display-mode: standalone)').matches || 
+         window.navigator.standalone === true ||
+         document.referrer.includes('android-app://') ||
+         new URLSearchParams(window.location.search).has('source=pwa');
+}
+
 // Initialize SPA
 document.addEventListener('DOMContentLoaded', function() {
   // Set up navigation
@@ -49,8 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Show ZOONE home by default
-  showPage('home');
+  // Auto-show VetVita if PWA, otherwise show ZOONE
+  if (isPWA()) {
+    showPage('vetvita');
+    console.log('PWA detectado - Mostrando VetVita');
+  } else {
+    showPage('home');
+    console.log('Navegador normal - Mostrando ZOONE');
+  }
 });
 
 // PWA install & VetVita mode
@@ -76,6 +90,8 @@ window.addEventListener('beforeinstallprompt', e => {
 
 window.addEventListener('appinstalled', e => {
   console.log('PWA VetVita instalado', e);
+  // Quando instalar, já mostra o VetVita
+  showPage('vetvita');
 });
 
 // registra SW
