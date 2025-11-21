@@ -1,18 +1,22 @@
 // SPA Navigation
 function showPage(pageId) {
   // Hide all pages
-  document.getElementById('main-zoone').classList.add('hidden');
+  document.getElementById('main-vetvita').classList.add('hidden');
   document.getElementById('vetvita-app').classList.add('hidden');
   
   // Show selected page
-  if (pageId === 'home' || pageId === 'projetos' || pageId === 'contato') {
-    document.getElementById('main-zoone').classList.remove('hidden');
+  if (pageId === 'home' || pageId === 'sobre' || pageId === 'contato' || pageId === 'admin') {
+    document.getElementById('main-vetvita').classList.remove('hidden');
     
     // Scroll to section if needed
     if (pageId === 'home') {
       window.scrollTo(0, 0);
-    } else if (pageId === 'projetos') {
-      document.getElementById('projetos').scrollIntoView({ behavior: 'smooth' });
+    } else if (pageId === 'sobre') {
+      document.getElementById('sobre').scrollIntoView({ behavior: 'smooth' });
+    } else if (pageId === 'contato') {
+      document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+    } else if (pageId === 'admin') {
+      document.getElementById('admin').scrollIntoView({ behavior: 'smooth' });
     }
   } else if (pageId === 'vetvita') {
     document.getElementById('vetvita-app').classList.remove('hidden');
@@ -39,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Auto-show VetVita if PWA, otherwise show ZOONE
+  // Auto-show VetVita App if PWA, otherwise show VetVita Main
   if (isPWA()) {
     showPage('vetvita');
-    console.log('PWA detectado - Mostrando VetVita');
+    console.log('PWA detectado - Mostrando VetVita App');
   } else {
     showPage('home');
-    console.log('Navegador normal - Mostrando ZOONE');
+    console.log('Navegador normal - Mostrando VetVita Principal');
   }
 });
 
@@ -60,7 +64,7 @@ document.querySelectorAll('[data-install]').forEach(btn => {
       deferredPrompt = null;
       return;
     }
-    // fallback: navigate to VetVita
+    // fallback: navigate to VetVita App
     showPage('vetvita');
   });
 });
@@ -72,7 +76,7 @@ window.addEventListener('beforeinstallprompt', e => {
 
 window.addEventListener('appinstalled', e => {
   console.log('PWA VetVita instalado', e);
-  // Quando instalar, já mostra o VetVita
+  // Quando instalar, já mostra o VetVita App
   showPage('vetvita');
 });
 
@@ -121,3 +125,32 @@ document.querySelectorAll('.vv-agendar-btn').forEach(btn => {
     });
   });
 });
+
+// Botão de limpar formulário de contato
+document.querySelectorAll('.clear-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const form = this.closest('.form-section') || this.closest('.admin-form');
+    if (form) {
+      const inputs = form.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.value = '';
+      });
+    }
+  });
+});
+
+// Botão de login admin
+const loginBtn = document.querySelector('.login-btn');
+if (loginBtn) {
+  loginBtn.addEventListener('click', function() {
+    const email = document.getElementById('admin-email').value;
+    const password = document.getElementById('admin-password').value;
+    
+    if (email && password) {
+      alert('Login realizado com sucesso!');
+      // Aqui você pode adicionar a lógica de autenticação real
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
+  });
+}
