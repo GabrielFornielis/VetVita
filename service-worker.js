@@ -6,6 +6,7 @@ const ASSETS = [
   '/manifest.json',
   '/css/style.css',
   '/js/script.js',
+  '/img/LogoZoone.png',
   '/img/LogoVetVita(ComFundo).png',
   '/img/Dowload.png',
   '/img/WebVetVita.png',

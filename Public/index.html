@@ -3,114 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
-  <title>VetVita - Hospital Veterinário</title>
+  <title>ZOONE - Tecnologia e Cuidado Animal</title>
 
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/img/icons/IcoVetVita-192x192.png">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <!-- Página VetVita Principal -->
-  <div id="main-vetvita" class="site-root">
+  <!-- Página ZOONE -->
+  <div id="main-zoone" class="site-root">
     <header>
-      <img src="/img/LogoVetVita(ComFundo).png" alt="Logo VetVita" class="logo">
+      <img src="/img/LogoZoone.png" alt="Logo ZOONE" class="logo">
       <nav>
         <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="sobre">Sobre</a>
+        <a href="#" data-page="projetos">Nossos Projetos</a>
         <a href="#" data-page="contato">Contato</a>
-        <a href="#" data-page="admin">Admin</a>
+        <a href="#" data-page="vetvita">VetVita</a>
       </nav>
       <div style="display:flex;align-items:center;gap:12px">
         <div class="install-area">
-          <button class="btn-install" data-install>Instalar App</button>
+          <button class="btn-install" data-install>Instalar VetVita</button>
         </div>
         <img class="perfil-icon" src="/img/icon.png" alt="Perfil">
       </div>
     </header>
 
     <section class="hero container" id="home">
-      <h2>Seu pet em<br>boas patas.</h2>
+      <h2>Conectando <br> tecnologia e<br> cuidado animal.</h2>
     </section>
 
     <section class="sobre container" id="sobre">
       <p>
-        Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade. 
-        Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até 
-        cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.
+        A ZOONE é uma empresa de tecnologia especializada em desenvolver soluções digitais para o setor veterinário e de bem-estar animal.
+        Nosso propósito é conectar inovação e cuidado, oferecendo ferramentas que tornam o atendimento mais ágil, organizado e humano.
       </p>
     </section>
 
-    <section class="contato container" id="contato">
-      <h1 style="text-align:center;color:#3a5d2b">Gostaria de nos contatar?</h1>
+    <section class="projeto container" id="projetos">
+      <h1 style="text-align:center;color:#3a5d2b">Nosso Projeto</h1>
+      <img class="vetvita-logo" src="/img/LogoVetVita(ComFundo).png" alt="Logo VetVita">
       <p class="descricao">
-        Envie perguntas, sugestões ou críticas por este formulário.
+        Entre nossos principais projetos está o VetVita, um hospital veterinário digital que representa o equilíbrio ideal entre tecnologia e empatia.
       </p>
 
-      <div class="form-section">
-        <textarea class="contact-textarea" placeholder="Escreva aqui..."></textarea>
-        <p class="form-note">
-          Os comentários enviados são importantes. Os utilizamos somente para aprimorar nossos serviços e tornar o VetVita cada vez melhor na escola.
-        </p>
-        <div class="form-buttons">
-          <button class="submit-btn">Enviar</button>
-          <button class="clear-btn">Limpar</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="admin container" id="admin">
-      <h1 style="text-align:center;color:#3a5d2b">Entre com sua conta de administrador</h1>
-      
-      <div class="admin-form">
-        <div class="form-group">
-          <label for="admin-email">Informe seu email:</label>
-          <input type="email" id="admin-email" placeholder="Seu email">
-        </div>
-        
-        <div class="form-group">
-          <label for="admin-password">Informe a senha disponibilizada pelo hospital:</label>
-          <input type="password" id="admin-password" placeholder="Sua senha">
-        </div>
-        
-        <div class="form-buttons">
-          <button class="login-btn">Entrar</button>
-          <button class="clear-btn">Limpar formulário</button>
-        </div>
-      </div>
-      
-      <div class="company-info">
-        <h2>Sobre nossa empresa</h2>
-        <p>
-          A VetVita é um hospital veterinário voltado para o cuidado e bem-estar dos animais de estimação. 
-          Oferecemos um atendimento prático e organizado, com agendamento online e acompanhamento fácil do histórico de consultas.
-        </p>
-        <button class="agendamento-btn" data-page="vetvita">
-          VetVita Agendamentos
+      <div class="download-section">
+        <button class="download-btn" data-page="vetvita">
+          <img src="/img/Dowload.png" alt="download"> Acessar VetVita
         </button>
+
+        <div class="imagens">
+          <img id="imgweb" src="/img/WebVetVita.png" width="300" height="200" alt="Imagem Laptop">
+          <img id="imgmobile" src="/img/MobileVetVita.png" width="200" height="350" alt="Imagem Celular">
+        </div>
       </div>
     </section>
 
     <footer class="footer container">
       <div class="footer-content">
-        <div class="footer-logo"><img src="/img/LogoVetVita(ComFundo).png" alt="Logo VetVita" style="width:140px"></div>
+        <div class="footer-logo"><img src="/img/LogoZoone.png" alt="Logo" style="width:140px"></div>
         <div class="footer-icons">
           <a href="#"><img src="/img/facebook.svg" alt="FB"></a>
           <a href="#"><img src="/img/instagram.svg" alt="IG"></a>
           <a href="#"><img src="/img/whatsapp.svg" alt="WA"></a>
         </div>
       </div>
-      <p style="text-align:center;color:#003366;margin-top:8px">© VetVita todos os direitos reservados</p>
+      <p style="text-align:center;color:#003366;margin-top:8px">© ZOONE todos os direitos reservados 2025</p>
     </footer>
   </div>
 
-  <!-- Página VetVita App (inicialmente oculta) -->
+  <!-- Página VetVita ÚNICA (inicialmente oculta) -->
   <div id="vetvita-app" class="hidden">
     <div class="vv-header">
       <div class="vv-brand">
         <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita">
         <strong>VetVita</strong>
       </div>
-      <button class="back-to-main" data-page="home">← Voltar</button>
+      <button class="back-to-zoone" data-page="home">← Voltar</button>
     </div>
 
     <!-- Página ÚNICA do VetVita com todas as seções -->
@@ -123,7 +91,7 @@
         <div class="vv-section-divider"></div>
 
         <h3 class="vv-section-title">Cadastre-se para acessar nossos serviços completos.</h3>
-        <p class="vv-section-sub">Caso ainda não esteja cadastrado, considere se cadastrar em nosso site para ter acesso a todos os nossos serviços e agendar consultas, exames e muito mais.</p>
+        <p class="vv-section-sub">Caso ainda não esteja nos filho, considere se cadastrar em nós o site para ter atresso a todos os nossos serviços e agendar consultas, ev arres e muito mais.</p>
 
         <div class="vv-section-divider"></div>
 
@@ -181,11 +149,11 @@
           <div class="vv-service-grid">
             <div class="vv-service-card">
               <h3>Exame de sangue<br>completo</h3>
-              <p>Para detectar infecções e<br>avaliar a saúde geral.</p>
+              <p>Para detectar interções e<br>avaliar a saúde geral.</p>
             </div>
             
             <div class="vv-service-card">
-              <h3>Ultrassonografia<br>abdominal</h3>
+              <h3>Ultrassorografia<br>abdominal</h3>
               <p>Visualização interna<br>de órgãos.</p>
             </div>
           </div>
@@ -199,13 +167,13 @@
           <div class="vv-service-grid">
             <div class="vv-service-card">
               <h3>Vacina V8 ou V10</h3>
-              <p>Proteção contra doenças<br>vitais graves.</p>
+              <p>Proteção conta doenças<br>vitais graves.</p>
               <button class="vv-btn-secondary vv-agendar-btn" data-service="v8v10">Agendar</button>
             </div>
             
             <div class="vv-service-card">
-              <h3>Vacina antirrábica</h3>
-              <p>Obrigatória e essencial<br>para todos os pets.</p>
+              <h3>Vacina aritmática</h3>
+              <p>Obrigatório e essencial<br>para todos os pets.</p>
               <button class="vv-btn-secondary">Agendar</button>
             </div>
           </div>
@@ -215,7 +183,7 @@
       <!-- Seção 3: Agendamento V8/V10 -->
       <section class="vv-agendamento-section">
         <h2 class="vv-service-title">Vacina V8 ou V10</h2>
-        <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente essencial na rotina de cuidado veterinário. Ela protege os cães contra oito doenças graves, ajudando a prevenir infecções contagiosas e potencialmente fatais.</p>
+        <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente assencial na rotina de cuidado veterinários. Ela protege os cães conta alto doenças graves, ajudando a prevenir infecções contagiosas e potencialmente ratais.</p>
 
         <div class="vv-section-divider"></div>
 
@@ -240,7 +208,7 @@
         </div>
 
         <div class="vv-price-section">
-          <p class="vv-price">Valor do serviço: R$ 120</p>
+          <p class="vv-price">Valor do serviço: R$ 2</p>
           <button class="vv-btn-primary">Agendar</button>
         </div>
       </section>

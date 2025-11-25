@@ -1,7 +1,7 @@
 {
-  "name": "VetVita - Hospital Veterinário",
-  "short_name": "VetVita", 
-  "description": "Hospital veterinário digital - Cuidado e carinho para seu pet",
+  "name": "VetVita (por ZOONE)",
+  "short_name": "VetVita",
+  "description": "Hospital veterinário digital - PWA VetVita",
   "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#faf3df",
@@ -14,7 +14,7 @@
       "type": "image/png"
     },
     {
-      "src": "img/icons/IcoVetVita512x512.png", 
+      "src": "img/icons/IcoVetVita512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
