@@ -10,132 +10,134 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<!-- PÁGINA INICIAL VETVITA -->
-<div id="main-zoone" class="site-root vetvita-landing">
+  <!-- PÁGINA INICIAL ZOONE -->
+  <div id="main-zoone" class="site-root">
+    <header class="vt-header">
+      <div class="vt-logo-area">
+        <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita" class="vt-logo">
+      </div>
 
-  <header class="vt-header">
-    <div class="vt-logo-area">
-      <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita">
-    </div>
+      <nav class="vt-nav">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="contato">Contato</a>
+        <a href="#" data-page="empresa">Empresa</a>
+        <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
+      </nav>
+    </header>
 
-    <nav class="vt-nav">
-      <a href="#">Home</a>
-      <a href="#">Contato</a>
-      <a href="#">Empresa</a>
-      <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
-    </nav>
-  </header>
+    <!-- HERO SECTION -->
+    <section class="vt-hero">
+      <div class="vt-hero-content">
+        <div class="vt-hero-text">
+          <h1>Seu pet em<br>boas patas.</h1>
+          <p>
+            Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade.
+            Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até
+            cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.
+          </p>
+        </div>
 
-  <!-- HERO -->
-  <section class="vt-hero">
+        <div class="vt-hero-image">
+          <img src="/img/gato.png" alt="Gato" />
+        </div>
+      </div>
+    </section>
 
-    <div class="vt-hero-text">
-      <h1>Seu pet em<br>boas patas.</h1>
-      <p>
-        Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade.
-        Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até
-        cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.
-      </p>
-    </div>
+    <!-- CONTATO SECTION -->
+    <section class="vt-contato" id="contato">
+      <h2>Gostaria de nos contatar?</h2>
 
-    <div class="vt-hero-image">
-      <img src="/img/gato.png" alt="Gato" />
-    </div>
-  </section>
+      <div class="vt-contato-container">
+        <form class="vt-form">
+          <label>Envie perguntas, sugestões ou críticas por este formulário.</label>
+          <textarea placeholder="Escreva aqui..."></textarea>
 
-  <!-- CONTATO -->
-  <section class="vt-contato">
-    <h2>Gostaria de nos contatar?</h2>
+          <p class="vt-note">
+            Os comentários enviados são anônimos. Usamos somente para melhorar nossos serviços.
+          </p>
 
-    <div class="vt-contato-container">
+          <div class="vt-buttons">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+          </div>
+        </form>
 
-      <form class="vt-form">
-        <label>Envie perguntas, sugestões ou críticas por este formulário.</label>
-        <textarea placeholder="Escreva aqui..."></textarea>
+        <div class="vt-map">
+          <img src="/img/mapa.png" alt="Mapa" />
+        </div>
+      </div>
+    </section>
 
-        <p class="vt-note">
-          Os comentários enviados são anônimos. Usamos somente para melhorar nossos serviços.
-        </p>
+    <!-- LOGIN ADMIN -->
+    <section class="vt-login">
+      <h2>Entre com sua conta de administrador</h2>
+
+      <form class="vt-admin-form">
+        <div class="form-group">
+          <label>Informe seu email:</label>
+          <input type="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Informe a senha disponibilizada pelo hospital:</label>
+          <input type="password" required>
+        </div>
 
         <div class="vt-buttons">
-          <button type="submit" class="btn-enviar">Enviar</button>
-          <button type="reset" class="btn-limpar">Limpar</button>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+          <button type="reset" class="btn btn-secondary">Limpar formulário</button>
         </div>
       </form>
+    </section>
 
-      <div class="vt-map">
-        <img src="/img/mapa.png" alt="Mapa" />
+    <!-- EMPRESA SECTION -->
+    <section class="vt-sobre" id="empresa">
+      <div class="vt-sobre-content">
+        <div class="vt-sobre-img">
+          <img src="/img/cachorro.png" alt="Cachorro">
+        </div>
+
+        <div class="vt-sobre-text">
+          <h2>Sobre nossa empresa</h2>
+          <p>
+            A VetVita é um hospital veterinário voltado para o cuidado e bem-estar dos animais
+            de estimação. Oferecemos um atendimento prático e organizado, com agendamento online
+            e acompanhamento fácil do histórico de consultas.
+          </p>
+
+          <button class="btn btn-accent" data-page="vetvita">VetVita Agendamentos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="vt-footer">
+      <div class="vt-social-icons">
+        <img src="/img/facebook.svg" alt="Facebook">
+        <img src="/img/instagram.svg" alt="Instagram">
+        <img src="/img/whatsapp.svg" alt="WhatsApp">
       </div>
 
-    </div>
-  </section>
+      <hr>
 
-  <!-- LOGIN ADMIN -->
-  <section class="vt-login">
-    <h2>Entre com sua conta de administrador</h2>
+      <img src="/img/LogoVetVita(ComFundo).png" class="vt-footer-logo" alt="VetVita">
 
-    <form>
-      <label>Informe seu email:</label>
-      <input type="email">
+      <p>©VetVita todos os direitos reservados</p>
+    </footer>
+  </div>
 
-      <label>Informe a senha disponibilizada pelo hospital:</label>
-      <input type="password">
-
-      <div class="vt-buttons">
-        <button class="btn-enviar">Entrar</button>
-        <button type="reset" class="btn-limpar">Limpar formulário</button>
-      </div>
-    </form>
-  </section>
-
-  <!-- EMPRESA -->
-  <section class="vt-sobre">
-    <div class="vt-sobre-img">
-      <img src="/img/cachorro.png" alt="Cachorro">
-    </div>
-
-    <div class="vt-sobre-text">
-      <h2>Sobre nossa empresa</h2>
-      <p>
-        A VetVita é um hospital veterinário voltado para o cuidado e bem-estar dos animais
-        de estimação. Oferecemos um atendimento prático e organizado, com agendamento online
-        e acompanhamento fácil do histórico de consultas.
-      </p>
-
-      <button class="btn-agendamento">VetVita Agendamentos</button>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="vt-footer">
-    <div class="icons">
-      <img src="/img/facebook.svg">
-      <img src="/img/instagram.svg">
-      <img src="/img/whatsapp.svg">
-    </div>
-
-    <hr>
-
-    <img src="/img/LogoVetVita(ComFundo).png" class="logo">
-
-    <p>©VetVita todos os direitos reservados</p>
-  </footer>
-
-</div>
-
-  <!-- Página VetVita ÚNICA (inicialmente oculta) -->
+  <!-- PÁGINA VETVITA APP -->
   <div id="vetvita-app" class="hidden">
     <div class="vv-header">
       <div class="vv-brand">
         <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita">
         <strong>VetVita</strong>
       </div>
-      <button class="back-to-zoone" data-page="home">← Voltar</button>
+      <button class="btn btn-outline back-to-zoone" data-page="home">← Voltar</button>
     </div>
 
-    <!-- Página ÚNICA do VetVita com todas as seções -->
     <div class="vetvita-single-page">
-      <!-- Seção 1: Hero/Cadastro -->
+       <!-- Seção 1: Hero/Cadastro -->
       <section class="vv-hero-section">
         <h1 class="vv-title">Seu pet em<br>boas patas.</h1>
         <p class="vv-sub">Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade. Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.</p>

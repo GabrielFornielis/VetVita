@@ -1,4 +1,15 @@
-/* RESET */
+/* ===== RESET & VARIÁVEIS ===== */
+:root {
+  --primary-color: #345c1c;
+  --secondary-color: #6b8f4a;
+  --accent-color: #a25612;
+  --light-bg: #faf3df;
+  --card-bg: #fff;
+  --text-dark: #3a5d2b;
+  --text-light: #556b3a;
+  --border-color: rgba(162, 86, 18, 0.2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,208 +17,305 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #003366;
-  line-height: 1.4;
+  font-family: "Poppins", Arial, sans-serif;
+  background: #fffef2;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 .hidden {
   display: none !important;
 }
 
-/* ZOONE (web-like even on mobile) */
-#main-zoone {
-  min-height: 100vh;
+/* ===== LAYOUT GERAL ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-header {
+/* ===== COMPONENTES REUTILIZÁVEIS ===== */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background: #f0d8b2;
+  color: #5c4210;
+}
+
+.btn-accent {
+  background: var(--accent-color);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ===== HEADER ===== */
+.vt-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
+  align-items: center;
+  padding: 20px 60px;
   background: #e8d4b2;
 }
 
-header img.logo {
-  height: 48px;
+.vt-logo {
+  height: 50px;
 }
 
-nav {
+.vt-nav {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
 }
 
-nav a {
-  font-weight: 700;
+.vt-nav a {
   text-decoration: none;
-  color: #8a5a2a;
-  padding: 6px 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 8px 16px;
   border-radius: 6px;
-  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.perfil-icon {
+.vt-nav a:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.vt-user-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-/* HERO */
-.hero {
-  min-height: 60vh;
+/* ===== HERO SECTION ===== */
+.vt-hero {
+  padding: 80px 60px;
+  background: #f5f1dc;
+}
+
+.vt-hero-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 40px 18px;
-  background: url("/img/Banner.jpg") center/cover no-repeat;
-  color: #fff;
-  font-weight: 700;
-  font-size: 36px;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vt-hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.vt-hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.vt-hero-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== CONTATO SECTION ===== */
+.vt-contato {
+  padding: 80px 60px;
+}
+
+.vt-contato h2 {
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  color: var(--accent-color);
+  font-size: 2rem;
 }
 
-/* CONTAINERS */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 18px;
-}
-
-.sobre {
-  background: #fff;
-  padding: 24px;
-  border-radius: 8px;
-  margin-top: 18px;
-}
-
-.sobre p {
-  line-height: 1.6;
-  color: #333;
-}
-
-/* PROJETO / DOWNLOAD */
-.projeto {
+.vt-contato-container {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: 18px;
-  background: #fff;
-  margin-top: 18px;
-  border-radius: 8px;
-  min-height: 50vh;
+  gap: 60px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.vetvita-logo {
-  width: 220px;
+.vt-form {
+  flex: 1;
+  background: #f9e3c7;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.vt-form label {
   display: block;
-  margin: 0 auto 10px auto;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-.descricao {
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: #333;
-}
-
-.download-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px;
-  background: #fff;
+.vt-form textarea,
+.vt-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
 }
 
-/* botão download */
-.download-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 20px;
-  background: #0a54a3;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
+.vt-form textarea {
+  min-height: 120px;
 }
 
-.download-btn img {
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
+.vt-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 12px 0;
 }
 
-/* imagens */
-.imagens {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.imagens img {
-  border-radius: 10px;
-  max-width: 100%;
-  height: auto;
-}
-
-/* FOOTER ZOONE */
-.footer {
-  background: #dfeff6;
-  padding: 20px;
-  margin-top: 22px;
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.footer-icons img {
-  width: 30px;
-  margin-left: 12px;
-}
-
-/* Button Install */
-.install-area {
+.vt-buttons {
   display: flex;
   gap: 12px;
+  margin-top: 20px;
+}
+
+.vt-map {
+  flex: 1;
+}
+
+.vt-map img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== LOGIN SECTION ===== */
+.vt-login {
+  padding: 60px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.vt-admin-form {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== SOBRE SECTION ===== */
+.vt-sobre {
+  padding: 80px 60px;
+  background: #f8f4e8;
+}
+
+.vt-sobre-content {
+  display: flex;
   align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.btn-install {
-  background: #6b8f4a;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: 700;
-  border: none;
+.vt-sobre-img img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.vt-sobre-text {
+  flex: 1;
+}
+
+.vt-sobre-text h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.vt-sobre-text p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* ===== FOOTER ===== */
+.vt-footer {
+  background: #c7dba6;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.vt-social-icons {
+  margin-bottom: 20px;
+}
+
+.vt-social-icons img {
+  width: 32px;
+  margin: 0 12px;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* VETVITA (app UI) - PÁGINA ÚNICA */
+.vt-social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.vt-footer-logo {
+  width: 140px;
+  margin: 20px 0;
+}
+
+.vt-footer hr {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 20px auto;
+  max-width: 200px;
+}
+
+/* ===== VETVITA APP STYLES ===== */
 #vetvita-app {
   min-height: 100vh;
-  background: #faf3df;
-  color: #3a5d2b;
+  background: var(--light-bg);
 }
 
 .vv-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 14px 16px;
+  align-items: center;
+  padding: 16px 20px;
   background: #e7cda2;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -215,8 +323,8 @@ nav a {
 
 .vv-brand {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 12px;
 }
 
 .vv-brand img {
@@ -224,550 +332,65 @@ nav a {
 }
 
 .vv-brand strong {
-  font-size: 18px;
-  color: #3a5d2b;
+  font-size: 1.2rem;
+  color: var(--text-dark);
 }
 
-.back-to-zoone {
-  background: transparent;
-  color: #3a5d2b;
-  border: 1px solid #3a5d2b;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* Página única do VetVita */
 .vetvita-single-page {
   max-width: 400px;
   margin: 0 auto;
   padding: 0;
 }
 
-/* Seções da página única */
-.vv-hero-section,
-.vv-services-section,
-.vv-agendamento-section {
-  padding: 24px 16px;
-}
-
-.vv-services-section {
-  background: #f8f4e8;
-}
-
-.vv-agendamento-section {
-  background: #faf3df;
-}
-
-.vv-title {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 16px;
-  text-align: left;
-  line-height: 1.2;
-}
-
-.vv-sub {
-  color: #556b3a;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  font-size: 15px;
-}
-
-.vv-section-divider {
-  height: 2px;
-  background: rgba(90, 52, 20, 0.15);
-  margin: 24px 0;
-}
-
-.vv-section-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #3a5d2b;
-}
-
-.vv-section-sub {
-  color: #556b3a;
-  line-height: 1.4;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.vv-form-label {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #3a5d2b;
-  display: block;
-}
-
-.vv-form input[type="text"],
-.vv-form input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 16px;
-  background: #fff;
-  font-size: 15px;
-}
-
-/* Checkbox groups como nas imagens */
-.vv-checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  padding: 8px 0;
-}
-
-.vv-checkbox-group input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #3a5d2b;
-}
-
-.vv-checkbox-group label {
-  font-size: 15px;
-  color: #3a5d2b;
-  font-weight: 600;
-}
-
-.vv-btn-primary {
-  width: 100%;
-  background: #a25612;
-  color: #fff;
-  padding: 14px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 700;
-  font-size: 16px;
-  margin: 16px 0;
-  cursor: pointer;
-}
-
-.vv-btn-secondary {
-  background: #6b8f4a;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 12px;
-  font-size: 14px;
-  width: 100%;
-}
-
-.vv-social-login {
-  margin: 20px 0;
-}
-
-.vv-btn-google {
-  width: 100%;
-  background: #fff;
-  color: #333;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.vv-login-link {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.vv-login-link p {
-  color: #556b3a;
-  font-size: 14px;
-}
-
-.vv-link {
-  color: #a25612;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* Serviços */
-.vv-service-category {
-  margin-bottom: 24px;
-}
-
-.vv-service-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #3a5d2b;
-  text-align: center;
-}
-
-.vv-service-description {
-  color: #556b3a;
-  line-height: 1.5;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.vv-service-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.vv-service-card {
-  background: #fff;
-  padding: 16px;
-  border-radius: 12px;
-  border: 2px solid rgba(162, 86, 18, 0.12);
-  text-align: center;
-}
-
-.vv-service-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #3a5d2b;
-  line-height: 1.3;
-}
-
-.vv-service-card p {
-  color: #556b3a;
-  line-height: 1.4;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-/* Time grid como tabela */
-.vv-time-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.vv-time-slot {
-  padding: 12px 8px;
-  border: 2px solid rgba(162, 86, 18, 0.3);
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  background: #fff;
-  font-size: 14px;
-}
-
-.vv-time-slot.empty {
-  border: none;
-  background: transparent;
-  cursor: default;
-}
-
-.vv-time-slot:hover:not(.empty) {
-  background: #f0e6d2;
-}
-
-/* Seleção de pet */
-.vv-pet-selection {
-  margin-bottom: 20px;
-}
-
-.vv-pet-option {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  background: #fff;
-  border-radius: 8px;
-  border: 2px solid rgba(162, 86, 18, 0.12);
-}
-
-.vv-pet-option input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #3a5d2b;
-}
-
-.vv-pet-option label {
-  font-size: 15px;
-  color: #3a5d2b;
-  font-weight: 600;
-}
-
-.vv-price-section {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid rgba(162, 86, 18, 0.12);
-  margin-top: 20px;
-  text-align: center;
-}
-
-.vv-price {
-  font-size: 18px;
-  font-weight: 700;
-  color: #3a5d2b;
-  margin-bottom: 16px;
-}
-
-.vv-footer {
-  padding: 20px;
-  text-align: center;
-  color: #7a5a2f;
-  background: #e7cda2;
-  margin-top: 0;
-  font-size: 14px;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .hero {
-    font-size: 26px;
-    padding: 36px 18px;
-    min-height: 40vh;
-  }
-  
-  nav {
-    gap: 8px;
-  }
-  
-  .download-section {
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .vt-hero-content,
+  .vt-sobre-content {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
   
-  .imagens {
+  .vt-hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vt-header {
+    padding: 15px 20px;
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
   }
   
-  .vetvita-logo {
-    width: 160px;
+  .vt-hero,
+  .vt-contato,
+  .vt-sobre {
+    padding: 40px 20px;
   }
   
-  .vv-time-grid {
-    grid-template-columns: 1fr;
+  .vt-contato-container {
+    flex-direction: column;
+  }
+  
+  .vt-hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .vt-buttons {
+    flex-direction: column;
+  }
+  
+  .vt-nav {
+    gap: 12px;
   }
 }
 
-@media (min-width: 768px) {
-  .vv-service-grid {
-    flex-direction: row;
-  }
-  
-  .vv-service-card {
-    flex: 1;
-  }
-}
-
-/* Mobile específico para VetVita */
 @media (max-width: 480px) {
-  .vv-hero-section,
-  .vv-services-section,
-  .vv-agendamento-section {
-    padding: 20px 12px;
+  .vt-hero-text h1 {
+    font-size: 1.8rem;
   }
   
-  .vv-title {
-    font-size: 24px;
+  .vetvita-single-page {
+    padding: 0 12px;
   }
-  
-  .vv-service-title {
-    font-size: 18px;
-  }
-  
-  .vv-time-slot {
-    padding: 10px 6px;
-    font-size: 13px;
-  }
-}
-
-/* GERAL */
-.vetvita-landing {
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-  background: #fffef2;
-  color: #345c1c;
-}
-
-/* HEADER */
-.vt-header {
-  width: 100%;
-  padding: 22px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.vt-nav {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  font-weight: 600;
-}
-
-.vt-nav a {
-  text-decoration: none;
-  color: #345c1c;
-}
-
-.vt-user-icon {
-  width: 34px;
-  border-radius: 50%;
-}
-
-/* HERO */
-.vt-hero {
-  display: flex;
-  padding: 60px;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  background: #f5f1dc;
-}
-
-.vt-hero-text h1 {
-  font-size: 56px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.vt-hero-text p {
-  max-width: 500px;
-  line-height: 1.5;
-  color: #555;
-}
-
-.vt-hero-image img {
-  max-width: 320px;
-}
-
-/* CONTATO */
-.vt-contato {
-  padding: 50px 60px;
-}
-
-.vt-contato h2 {
-  margin-bottom: 24px;
-  color: #b36128;
-}
-
-.vt-contato-container {
-  display: flex;
-  gap: 50px;
-}
-
-.vt-form {
-  background: #f9e3c7;
-  padding: 20px;
-  width: 40%;
-  border-radius: 12px;
-}
-
-.vt-form label {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.vt-form textarea {
-  margin-top: 10px;
-  width: 100%;
-  height: 100px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  resize: none;
-  padding: 10px;
-}
-
-.vt-note {
-  font-size: 12px;
-  margin-top: 10px;
-  opacity: .7;
-}
-
-.vt-buttons {
-  margin-top: 12px;
-  display: flex;
-  gap: 12px;
-}
-
-.btn-enviar {
-  padding: 10px 20px;
-  background: #345c1c;
-  border-radius: 8px;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-limpar {
-  padding: 10px 20px;
-  background: #f0d8b2;
-  border-radius: 8px;
-  color: #5c4210;
-  border: none;
-  cursor: pointer;
-}
-
-.vt-map img {
-  width: 330px;
-  border-radius: 12px;
-}
-
-/* LOGIN */
-.vt-login {
-  padding: 60px;
-}
-
-.vt-login input {
-  width: 300px;
-  margin-bottom: 12px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* SOBRE */
-.vt-sobre {
-  display: flex;
-  padding: 60px;
-  align-items: center;
-  gap: 40px;
-}
-
-.vt-sobre-img img {
-  width: 230px;
-}
-
-.btn-agendamento {
-  margin-top: 18px;
-  padding: 12px 20px;
-  background: #ca7730;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* FOOTER */
-.vt-footer {
-  background: #c7dba6;
-  text-align: center;
-  padding: 30px 10px;
-}
-
-.vt-footer .icons img {
-  width: 32px;
-  margin: 0 6px;
-}
-
-.vt-footer .logo {
-  width: 140px;
-  margin-top: 12px;
 }
