@@ -586,3 +586,188 @@ nav a {
     font-size: 13px;
   }
 }
+
+/* GERAL */
+.vetvita-landing {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #fffef2;
+  color: #345c1c;
+}
+
+/* HEADER */
+.vt-header {
+  width: 100%;
+  padding: 22px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vt-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.vt-nav a {
+  text-decoration: none;
+  color: #345c1c;
+}
+
+.vt-user-icon {
+  width: 34px;
+  border-radius: 50%;
+}
+
+/* HERO */
+.vt-hero {
+  display: flex;
+  padding: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  background: #f5f1dc;
+}
+
+.vt-hero-text h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.vt-hero-text p {
+  max-width: 500px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.vt-hero-image img {
+  max-width: 320px;
+}
+
+/* CONTATO */
+.vt-contato {
+  padding: 50px 60px;
+}
+
+.vt-contato h2 {
+  margin-bottom: 24px;
+  color: #b36128;
+}
+
+.vt-contato-container {
+  display: flex;
+  gap: 50px;
+}
+
+.vt-form {
+  background: #f9e3c7;
+  padding: 20px;
+  width: 40%;
+  border-radius: 12px;
+}
+
+.vt-form label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.vt-form textarea {
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  padding: 10px;
+}
+
+.vt-note {
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: .7;
+}
+
+.vt-buttons {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-enviar {
+  padding: 10px 20px;
+  background: #345c1c;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-limpar {
+  padding: 10px 20px;
+  background: #f0d8b2;
+  border-radius: 8px;
+  color: #5c4210;
+  border: none;
+  cursor: pointer;
+}
+
+.vt-map img {
+  width: 330px;
+  border-radius: 12px;
+}
+
+/* LOGIN */
+.vt-login {
+  padding: 60px;
+}
+
+.vt-login input {
+  width: 300px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* SOBRE */
+.vt-sobre {
+  display: flex;
+  padding: 60px;
+  align-items: center;
+  gap: 40px;
+}
+
+.vt-sobre-img img {
+  width: 230px;
+}
+
+.btn-agendamento {
+  margin-top: 18px;
+  padding: 12px 20px;
+  background: #ca7730;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.vt-footer {
+  background: #c7dba6;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.vt-footer .icons img {
+  width: 32px;
+  margin: 0 6px;
+}
+
+.vt-footer .logo {
+  width: 140px;
+  margin-top: 12px;
+}

@@ -10,66 +10,118 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <!-- Página ZOONE -->
-  <div id="main-zoone" class="site-root">
-    <header>
-      <img src="/img/LogoZoone.png" alt="Logo ZOONE" class="logo">
-      <nav>
-        <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="projetos">Nossos Projetos</a>
-        <a href="#" data-page="contato">Contato</a>
-        <a href="#" data-page="vetvita">VetVita</a>
-      </nav>
-      <div style="display:flex;align-items:center;gap:12px">
-        <div class="install-area">
-          <button class="btn-install" data-install>Instalar VetVita</button>
-        </div>
-        <img class="perfil-icon" src="/img/icon.png" alt="Perfil">
-      </div>
-    </header>
+<!-- PÁGINA INICIAL VETVITA -->
+<div id="main-zoone" class="site-root vetvita-landing">
 
-    <section class="hero container" id="home">
-      <h2>Conectando <br> tecnologia e<br> cuidado animal.</h2>
-    </section>
+  <header class="vt-header">
+    <div class="vt-logo-area">
+      <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita">
+    </div>
 
-    <section class="sobre container" id="sobre">
+    <nav class="vt-nav">
+      <a href="#">Home</a>
+      <a href="#">Contato</a>
+      <a href="#">Empresa</a>
+      <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="vt-hero">
+
+    <div class="vt-hero-text">
+      <h1>Seu pet em<br>boas patas.</h1>
       <p>
-        A ZOONE é uma empresa de tecnologia especializada em desenvolver soluções digitais para o setor veterinário e de bem-estar animal.
-        Nosso propósito é conectar inovação e cuidado, oferecendo ferramentas que tornam o atendimento mais ágil, organizado e humano.
+        Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade.
+        Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até
+        cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.
       </p>
-    </section>
+    </div>
 
-    <section class="projeto container" id="projetos">
-      <h1 style="text-align:center;color:#3a5d2b">Nosso Projeto</h1>
-      <img class="vetvita-logo" src="/img/LogoVetVita(ComFundo).png" alt="Logo VetVita">
-      <p class="descricao">
-        Entre nossos principais projetos está o VetVita, um hospital veterinário digital que representa o equilíbrio ideal entre tecnologia e empatia.
+    <div class="vt-hero-image">
+      <img src="/img/gato.png" alt="Gato" />
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="vt-contato">
+    <h2>Gostaria de nos contatar?</h2>
+
+    <div class="vt-contato-container">
+
+      <form class="vt-form">
+        <label>Envie perguntas, sugestões ou críticas por este formulário.</label>
+        <textarea placeholder="Escreva aqui..."></textarea>
+
+        <p class="vt-note">
+          Os comentários enviados são anônimos. Usamos somente para melhorar nossos serviços.
+        </p>
+
+        <div class="vt-buttons">
+          <button type="submit" class="btn-enviar">Enviar</button>
+          <button type="reset" class="btn-limpar">Limpar</button>
+        </div>
+      </form>
+
+      <div class="vt-map">
+        <img src="/img/mapa.png" alt="Mapa" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOGIN ADMIN -->
+  <section class="vt-login">
+    <h2>Entre com sua conta de administrador</h2>
+
+    <form>
+      <label>Informe seu email:</label>
+      <input type="email">
+
+      <label>Informe a senha disponibilizada pelo hospital:</label>
+      <input type="password">
+
+      <div class="vt-buttons">
+        <button class="btn-enviar">Entrar</button>
+        <button type="reset" class="btn-limpar">Limpar formulário</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- EMPRESA -->
+  <section class="vt-sobre">
+    <div class="vt-sobre-img">
+      <img src="/img/cachorro.png" alt="Cachorro">
+    </div>
+
+    <div class="vt-sobre-text">
+      <h2>Sobre nossa empresa</h2>
+      <p>
+        A VetVita é um hospital veterinário voltado para o cuidado e bem-estar dos animais
+        de estimação. Oferecemos um atendimento prático e organizado, com agendamento online
+        e acompanhamento fácil do histórico de consultas.
       </p>
 
-      <div class="download-section">
-        <button class="download-btn" data-page="vetvita">
-          <img src="/img/Dowload.png" alt="download"> Acessar VetVita
-        </button>
+      <button class="btn-agendamento">VetVita Agendamentos</button>
+    </div>
+  </section>
 
-        <div class="imagens">
-          <img id="imgweb" src="/img/WebVetVita.png" width="300" height="200" alt="Imagem Laptop">
-          <img id="imgmobile" src="/img/MobileVetVita.png" width="200" height="350" alt="Imagem Celular">
-        </div>
-      </div>
-    </section>
+  <!-- FOOTER -->
+  <footer class="vt-footer">
+    <div class="icons">
+      <img src="/img/facebook.svg">
+      <img src="/img/instagram.svg">
+      <img src="/img/whatsapp.svg">
+    </div>
 
-    <footer class="footer container">
-      <div class="footer-content">
-        <div class="footer-logo"><img src="/img/LogoZoone.png" alt="Logo" style="width:140px"></div>
-        <div class="footer-icons">
-          <a href="#"><img src="/img/facebook.svg" alt="FB"></a>
-          <a href="#"><img src="/img/instagram.svg" alt="IG"></a>
-          <a href="#"><img src="/img/whatsapp.svg" alt="WA"></a>
-        </div>
-      </div>
-      <p style="text-align:center;color:#003366;margin-top:8px">© ZOONE todos os direitos reservados 2025</p>
-    </footer>
-  </div>
+    <hr>
+
+    <img src="/img/LogoVetVita(ComFundo).png" class="logo">
+
+    <p>©VetVita todos os direitos reservados</p>
+  </footer>
+
+</div>
 
   <!-- Página VetVita ÚNICA (inicialmente oculta) -->
   <div id="vetvita-app" class="hidden">
