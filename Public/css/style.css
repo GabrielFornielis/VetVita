@@ -121,7 +121,7 @@ body {
 
 /* ===== HERO SECTION ===== */
 .vt-hero {
-  padding: 80px 60px;
+  padding: 45px 60px;
   background: #f5f1dc;
 }
 
@@ -135,14 +135,15 @@ body {
 }
 
 .vt-hero-text h1 {
-  font-size: 3.5rem;
-  line-height: 1.1;
+
+  font-size: 4.5rem;
+  line-height: 1;
   margin-bottom: 24px;
   font-weight: 800;
 }
 
 .vt-hero-text p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-light);
   max-width: 500px;
   line-height: 1.6;
@@ -165,10 +166,9 @@ body {
 }
 
 .vt-contato h2 {
-  text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   color: var(--accent-color);
-  font-size: 2rem;
+  margin-left: 5px;
 }
 
 .vt-contato-container {
@@ -200,6 +200,7 @@ body {
 .vt-form input {
   width: 100%;
   padding: 12px;
+  margin-top: 10px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 16px;
@@ -207,7 +208,7 @@ body {
 }
 
 .vt-form textarea {
-  min-height: 120px;
+  min-height: 75px;
 }
 
 .vt-note {
@@ -220,6 +221,7 @@ body {
   display: flex;
   gap: 12px;
   margin-top: 20px;
+  justify-content: space-between;
 }
 
 .vt-map {
