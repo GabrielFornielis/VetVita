@@ -3,6 +3,7 @@ class VetVitaApp {
   constructor() {
     this.currentPage = 'home';
     this.deferredPrompt = null;
+    this.selectedTimeSlot = null;
     this.init();
   }
 
@@ -10,6 +11,7 @@ class VetVitaApp {
     this.setupEventListeners();
     this.setupNavigation();
     this.detectPWA();
+    this.registerServiceWorker();
   }
 
   // ===== NAVEGAÇÃO =====
@@ -69,22 +71,62 @@ class VetVitaApp {
 
   // ===== PWA INSTALL =====
   setupEventListeners() {
-    // PWA Install
+    // PWA Install Prompt
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       this.deferredPrompt = e;
+      console.log('PWA pode ser instalado');
     });
 
     window.addEventListener('appinstalled', () => {
-      console.log('PWA VetVita instalado');
+      console.log('PWA VetVita instalado com sucesso!');
       this.showPage('vetvita');
+      this.deferredPrompt = null;
     });
+
+    // Botão de instalação na página principal
+    const installBtn = document.getElementById('install-vetvita');
+    if (installBtn) {
+      installBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.showInstallPrompt();
+      });
+    }
+
+    // Modal de instalação
+    const installConfirm = document.getElementById('install-confirm');
+    const installCancel = document.getElementById('install-cancel');
+    
+    if (installConfirm) {
+      installConfirm.addEventListener('click', () => {
+        this.installPWA();
+        this.hideInstallModal();
+      });
+    }
+    
+    if (installCancel) {
+      installCancel.addEventListener('click', () => {
+        this.hideInstallModal();
+        // Mostra o VetVita mesmo sem instalar
+        this.showPage('vetvita');
+      });
+    }
 
     // Cadastro
     const btnCadastro = document.getElementById('btnCadastro');
     if (btnCadastro) {
-      btnCadastro.addEventListener('click', () => {
+      btnCadastro.addEventListener('click', (e) => {
+        e.preventDefault();
         this.handleCadastro();
+      });
+    }
+
+    // Finalizar agendamento
+    const finalizarBtn = document.getElementById('finalizar-agendamento');
+    if (finalizarBtn) {
+      finalizarBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.finalizarAgendamento();
       });
     }
 
@@ -95,7 +137,60 @@ class VetVitaApp {
     this.setupAgendamentoButtons();
   }
 
+  showInstallPrompt() {
+    if (this.deferredPrompt) {
+      // Mostra prompt nativo de instalação
+      this.installPWA();
+    } else {
+      // Mostra modal customizado
+      this.showInstallModal();
+    }
+  }
+
+  showInstallModal() {
+    const modal = document.getElementById('install-modal');
+    modal.classList.remove('hidden');
+  }
+
+  hideInstallModal() {
+    const modal = document.getElementById('install-modal');
+    modal.classList.add('hidden');
+  }
+
+  async installPWA() {
+    if (this.deferredPrompt) {
+      try {
+        this.deferredPrompt.prompt();
+        const { outcome } = await this.deferredPrompt.userChoice;
+        
+        if (outcome === 'accepted') {
+          console.log('Usuário aceitou a instalação do PWA');
+          this.showPage('vetvita');
+        } else {
+          console.log('Usuário recusou a instalação do PWA');
+          // Mostra o VetVita mesmo sem instalar
+          this.showPage('vetvita');
+        }
+        
+        this.deferredPrompt = null;
+      } catch (error) {
+        console.error('Erro durante instalação:', error);
+        // Fallback: mostra o VetVita
+        this.showPage('vetvita');
+      }
+    } else {
+      // Fallback: mostra o VetVita
+      this.showPage('vetvita');
+    }
+  }
+
   handleCadastro() {
+    const nome = document.getElementById('nome').value;
+    if (!nome) {
+      alert('Por favor, informe seu nome completo.');
+      return;
+    }
+    
     alert('Cadastro realizado com sucesso!');
     document.querySelector('.vv-services-section')?.scrollIntoView({ 
       behavior: 'smooth' 
@@ -109,24 +204,49 @@ class VetVitaApp {
         
         // Remove seleção anterior
         document.querySelectorAll('.vv-time-slot').forEach(s => {
-          s.style.background = '#fff';
-          s.style.borderColor = 'rgba(162, 86, 18, 0.3)';
+          s.classList.remove('selected');
         });
         
         // Seleciona atual
-        slot.style.background = '#e7cda2';
-        slot.style.borderColor = '#a25612';
+        slot.classList.add('selected');
+        this.selectedTimeSlot = slot.textContent;
       });
     });
   }
 
   setupAgendamentoButtons() {
     document.querySelectorAll('.vv-agendar-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelector('.vv-agendamento-section')?.scrollIntoView({ 
-          behavior: 'smooth' 
-        });
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const service = btn.getAttribute('data-service');
+        this.agendarServico(service);
       });
+    });
+  }
+
+  agendarServico(service) {
+    // Rola para a seção de agendamento
+    document.querySelector('.vv-agendamento-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+    
+    // Aqui você pode customizar baseado no serviço selecionado
+    console.log(`Agendando serviço: ${service}`);
+  }
+
+  finalizarAgendamento() {
+    if (!this.selectedTimeSlot) {
+      alert('Por favor, selecione um horário para o agendamento.');
+      return;
+    }
+    
+    // Simulação de agendamento
+    alert(`Agendamento confirmado para ${this.selectedTimeSlot}! Valor: R$ 120,00`);
+    
+    // Limpa seleção
+    this.selectedTimeSlot = null;
+    document.querySelectorAll('.vv-time-slot').forEach(s => {
+      s.classList.remove('selected');
     });
   }
 
@@ -141,21 +261,16 @@ class VetVitaApp {
 }
 
 // ===== INICIALIZAÇÃO =====
+let vetVitaApp;
+
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new VetVitaApp();
-  app.registerServiceWorker();
+  vetVitaApp = new VetVitaApp();
+  window.vetVitaApp = vetVitaApp; // Disponibiliza globalmente se necessário
 });
 
-// ===== INSTALAÇÃO PWA =====
-document.querySelectorAll('[data-install]').forEach(btn => {
-  btn.addEventListener('click', async () => {
-    if (window.vetVitaApp?.deferredPrompt) {
-      window.vetVitaApp.deferredPrompt.prompt();
-      const choice = await window.vetVitaApp.deferredPrompt.userChoice;
-      window.vetVitaApp.deferredPrompt = null;
-      return;
-    }
-    // Fallback para navegação
-    window.vetVitaApp?.showPage('vetvita');
-  });
-});
+// ===== FUNÇÕES GLOBAIS PARA INSTALAÇÃO =====
+function installVetVita() {
+  if (window.vetVitaApp) {
+    window.vetVitaApp.showInstallPrompt();
+  }
+}

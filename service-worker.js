@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vetvita-v7';
+const CACHE_NAME = 'vetvita-v8';
 const ASSETS = [
   '/',
   '/?source=pwa',
@@ -6,16 +6,20 @@ const ASSETS = [
   '/manifest.json',
   '/css/style.css',
   '/js/script.js',
-  '/img/LogoZoone.png',
   '/img/LogoVetVita(ComFundo).png',
-  '/img/Dowload.png',
-  '/img/WebVetVita.png',
-  '/img/MobileVetVita.png',
-  '/img/Banner.jpg',
+  '/img/gato.png',
+  '/img/cachorro.png',
+  '/img/mapa.png',
   '/img/icon.png',
   '/img/facebook.svg',
   '/img/instagram.svg',
   '/img/whatsapp.svg',
+  '/img/consulta-geral.png',
+  '/img/emergencia.png',
+  '/img/exame-sangue.png',
+  '/img/ultrassom.png',
+  '/img/vacina-v8.png',
+  '/img/vacina-raiva.png',
   '/img/icons/IcoVetVita192x192.png',
   '/img/icons/IcoVetVita512x512.png'
 ];

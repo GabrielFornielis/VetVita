@@ -38,7 +38,7 @@
         </div>
 
         <div class="vt-hero-image">
-          <img src="/img/gato.png" alt="Gato" />
+          <img src="/img/gato.png" alt="Gato" class="hero-pet-img" />
         </div>
       </div>
     </section>
@@ -63,7 +63,7 @@
         </form>
 
         <div class="vt-map">
-          <img src="/img/mapa.png" alt="Mapa" />
+          <img src="/img/mapa.png" alt="Mapa" class="map-img" />
         </div>
       </div>
     </section>
@@ -94,7 +94,7 @@
     <section class="vt-sobre" id="empresa">
       <div class="vt-sobre-content">
         <div class="vt-sobre-img">
-          <img src="/img/cachorro.png" alt="Cachorro">
+          <img src="/img/cachorro.png" alt="Cachorro" class="sobre-pet-img">
         </div>
 
         <div class="vt-sobre-text">
@@ -105,7 +105,7 @@
             e acompanhamento fácil do histórico de consultas.
           </p>
 
-          <button class="btn btn-accent" data-page="vetvita">VetVita Agendamentos</button>
+          <button class="btn btn-accent" id="install-vetvita">VetVita Agendamentos</button>
         </div>
       </div>
     </section>
@@ -130,14 +130,14 @@
   <div id="vetvita-app" class="hidden">
     <div class="vv-header">
       <div class="vv-brand">
-        <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita">
+        <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita" class="vv-logo">
         <strong>VetVita</strong>
       </div>
       <button class="btn btn-outline back-to-zoone" data-page="home">← Voltar</button>
     </div>
 
     <div class="vetvita-single-page">
-       <!-- Seção 1: Hero/Cadastro -->
+      <!-- Seção 1: Hero/Cadastro -->
       <section class="vv-hero-section">
         <h1 class="vv-title">Seu pet em<br>boas patas.</h1>
         <p class="vv-sub">Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade. Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.</p>
@@ -145,7 +145,7 @@
         <div class="vv-section-divider"></div>
 
         <h3 class="vv-section-title">Cadastre-se para acessar nossos serviços completos.</h3>
-        <p class="vv-section-sub">Caso ainda não esteja nos filho, considere se cadastrar em nós o site para ter atresso a todos os nossos serviços e agendar consultas, ev arres e muito mais.</p>
+        <p class="vv-section-sub">Crie sua conta para ter acesso a todos os nossos serviços e agendar consultas, exames e muito mais.</p>
 
         <div class="vv-section-divider"></div>
 
@@ -184,11 +184,13 @@
           
           <div class="vv-service-grid">
             <div class="vv-service-card">
+              <img src="/img/consulta-geral.png" alt="Consulta Geral" class="service-icon">
               <h3>Consulta clínica<br>geral</h3>
               <p>Avaliação completa<br>da saúde do pet.</p>
             </div>
             
             <div class="vv-service-card">
+              <img src="/img/emergencia.png" alt="Emergência" class="service-icon">
               <h3>Consulta de<br>emergência</h3>
               <p>Atendimento rápido<br>para casos urgentes.</p>
             </div>
@@ -202,12 +204,14 @@
           
           <div class="vv-service-grid">
             <div class="vv-service-card">
+              <img src="/img/exame-sangue.png" alt="Exame Sangue" class="service-icon">
               <h3>Exame de sangue<br>completo</h3>
-              <p>Para detectar interções e<br>avaliar a saúde geral.</p>
+              <p>Para detectar infecções e<br>avaliar a saúde geral.</p>
             </div>
             
             <div class="vv-service-card">
-              <h3>Ultrassorografia<br>abdominal</h3>
+              <img src="/img/ultrassom.png" alt="Ultrassom" class="service-icon">
+              <h3>Ultrassonografia<br>abdominal</h3>
               <p>Visualização interna<br>de órgãos.</p>
             </div>
           </div>
@@ -220,15 +224,17 @@
           
           <div class="vv-service-grid">
             <div class="vv-service-card">
+              <img src="/img/vacina-v8.png" alt="Vacina V8" class="service-icon">
               <h3>Vacina V8 ou V10</h3>
-              <p>Proteção conta doenças<br>vitais graves.</p>
+              <p>Proteção contra doenças<br>vitais graves.</p>
               <button class="vv-btn-secondary vv-agendar-btn" data-service="v8v10">Agendar</button>
             </div>
             
             <div class="vv-service-card">
-              <h3>Vacina aritmática</h3>
-              <p>Obrigatório e essencial<br>para todos os pets.</p>
-              <button class="vv-btn-secondary">Agendar</button>
+              <img src="/img/vacina-raiva.png" alt="Vacina Raiva" class="service-icon">
+              <h3>Vacina antirrábica</h3>
+              <p>Obrigatória e essencial<br>para todos os pets.</p>
+              <button class="vv-btn-secondary vv-agendar-btn" data-service="raiva">Agendar</button>
             </div>
           </div>
         </div>
@@ -237,7 +243,7 @@
       <!-- Seção 3: Agendamento V8/V10 -->
       <section class="vv-agendamento-section">
         <h2 class="vv-service-title">Vacina V8 ou V10</h2>
-        <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente assencial na rotina de cuidado veterinários. Ela protege os cães conta alto doenças graves, ajudando a prevenir infecções contagiosas e potencialmente ratais.</p>
+        <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente essencial na rotina de cuidados veterinários. Ela protege os cães contra oito doenças graves, ajudando a prevenir infecções contagiosas e potencialmente fatais.</p>
 
         <div class="vv-section-divider"></div>
 
@@ -262,13 +268,25 @@
         </div>
 
         <div class="vv-price-section">
-          <p class="vv-price">Valor do serviço: R$ 2</p>
-          <button class="vv-btn-primary">Agendar</button>
+          <p class="vv-price">Valor do serviço: R$ 120,00</p>
+          <button class="vv-btn-primary" id="finalizar-agendamento">Finalizar Agendamento</button>
         </div>
       </section>
     </div>
 
     <div class="vv-footer">© VetVita todos os direitos reservados</div>
+  </div>
+
+  <!-- Modal de Instalação -->
+  <div id="install-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Instalar VetVita</h3>
+      <p>Deseja instalar o aplicativo VetVita para uma experiência melhor?</p>
+      <div class="modal-buttons">
+        <button id="install-confirm" class="btn btn-primary">Instalar Agora</button>
+        <button id="install-cancel" class="btn btn-secondary">Agora Não</button>
+      </div>
+    </div>
   </div>
 
   <script src="/js/script.js"></script>

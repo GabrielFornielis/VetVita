@@ -8,6 +8,8 @@
   --text-dark: #3a5d2b;
   --text-light: #556b3a;
   --border-color: rgba(162, 86, 18, 0.2);
+  --shadow: 0 4px 20px rgba(0,0,0,0.1);
+  --radius: 12px;
 }
 
 * {
@@ -45,6 +47,7 @@ body {
   display: inline-block;
   text-align: center;
   transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 .btn-primary {
@@ -70,7 +73,7 @@ body {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow);
 }
 
 /* ===== HEADER ===== */
@@ -80,10 +83,15 @@ body {
   align-items: center;
   padding: 20px 60px;
   background: #e8d4b2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .vt-logo {
   height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .vt-nav {
@@ -141,10 +149,16 @@ body {
   line-height: 1.6;
 }
 
-.vt-hero-image img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 12px;
+.vt-hero-image {
+  flex-shrink: 0;
+}
+
+.hero-pet-img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 /* ===== CONTATO SECTION ===== */
@@ -171,7 +185,7 @@ body {
   flex: 1;
   background: #f9e3c7;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .form-group {
@@ -214,10 +228,12 @@ body {
   flex: 1;
 }
 
-.vt-map img {
+.map-img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 /* ===== LOGIN SECTION ===== */
@@ -230,8 +246,8 @@ body {
 .vt-admin-form {
   background: var(--card-bg);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 /* ===== SOBRE SECTION ===== */
@@ -248,9 +264,12 @@ body {
   margin: 0 auto;
 }
 
-.vt-sobre-img img {
+.sobre-pet-img {
   width: 300px;
-  border-radius: 12px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .vt-sobre-text {
@@ -260,12 +279,14 @@ body {
 .vt-sobre-text h2 {
   margin-bottom: 20px;
   color: var(--primary-color);
+  font-size: 2rem;
 }
 
 .vt-sobre-text p {
   color: var(--text-light);
   line-height: 1.6;
   margin-bottom: 24px;
+  font-size: 1.1rem;
 }
 
 /* ===== FOOTER ===== */
@@ -281,9 +302,11 @@ body {
 
 .vt-social-icons img {
   width: 32px;
+  height: 32px;
   margin: 0 12px;
   cursor: pointer;
   transition: transform 0.3s;
+  object-fit: contain;
 }
 
 .vt-social-icons img:hover {
@@ -292,7 +315,9 @@ body {
 
 .vt-footer-logo {
   width: 140px;
+  height: auto;
   margin: 20px 0;
+  object-fit: contain;
 }
 
 .vt-footer hr {
@@ -327,8 +352,10 @@ body {
   gap: 12px;
 }
 
-.vv-brand img {
+.vv-logo {
   height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 .vv-brand strong {
@@ -342,6 +369,338 @@ body {
   padding: 0;
 }
 
+/* Seções VetVita */
+.vv-hero-section,
+.vv-services-section,
+.vv-agendamento-section {
+  padding: 24px 16px;
+}
+
+.vv-services-section {
+  background: #f8f4e8;
+}
+
+.vv-agendamento-section {
+  background: var(--light-bg);
+}
+
+.vv-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.vv-sub {
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.vv-section-divider {
+  height: 2px;
+  background: rgba(90, 52, 20, 0.15);
+  margin: 24px 0;
+}
+
+.vv-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.vv-section-sub {
+  color: var(--text-light);
+  line-height: 1.4;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.vv-form-label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  display: block;
+}
+
+.vv-form input[type="text"],
+.vv-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  background: #fff;
+  font-size: 15px;
+}
+
+.vv-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.vv-checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+.vv-checkbox-group label {
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.vv-btn-primary {
+  width: 100%;
+  background: var(--accent-color);
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+.vv-btn-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.vv-social-login {
+  margin: 20px 0;
+}
+
+.vv-btn-google {
+  width: 100%;
+  background: #fff;
+  color: #333;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.vv-login-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.vv-login-link p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.vv-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Serviços */
+.vv-service-category {
+  margin-bottom: 24px;
+}
+
+.vv-service-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.vv-service-description {
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.vv-service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vv-service-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 2px solid rgba(162, 86, 18, 0.12);
+  text-align: center;
+  position: relative;
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.vv-service-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.vv-service-card p {
+  color: var(--text-light);
+  line-height: 1.4;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Time grid */
+.vv-time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.vv-time-slot {
+  padding: 12px 8px;
+  border: 2px solid rgba(162, 86, 18, 0.3);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.vv-time-slot.empty {
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.vv-time-slot:hover:not(.empty) {
+  background: #f0e6d2;
+}
+
+.vv-time-slot.selected {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+/* Seleção de pet */
+.vv-pet-selection {
+  margin-bottom: 20px;
+}
+
+.vv-pet-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid rgba(162, 86, 18, 0.12);
+}
+
+.vv-pet-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+.vv-pet-option label {
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.vv-price-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 2px solid rgba(162, 86, 18, 0.12);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.vv-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.vv-footer {
+  padding: 20px;
+  text-align: center;
+  color: #7a5a2f;
+  background: #e7cda2;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow);
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.modal p {
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
   .vt-hero-content,
@@ -352,6 +711,11 @@ body {
   
   .vt-hero-text h1 {
     font-size: 2.5rem;
+  }
+  
+  .hero-pet-img {
+    width: 350px;
+    height: 260px;
   }
 }
 
@@ -383,6 +747,20 @@ body {
   .vt-nav {
     gap: 12px;
   }
+  
+  .hero-pet-img {
+    width: 300px;
+    height: 220px;
+  }
+  
+  .sobre-pet-img {
+    width: 250px;
+    height: 200px;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
@@ -392,5 +770,31 @@ body {
   
   .vetvita-single-page {
     padding: 0 12px;
+  }
+  
+  .hero-pet-img {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+  }
+  
+  .sobre-pet-img {
+    width: 100%;
+    max-width: 220px;
+    height: 180px;
+  }
+  
+  .vv-time-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .vv-service-grid {
+    flex-direction: row;
+  }
+  
+  .vv-service-card {
+    flex: 1;
   }
 }
