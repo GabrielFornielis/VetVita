@@ -8,6 +8,8 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/png" href="/img/icons/IcoVetVita192x192.png">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
 <body>
   <!-- PÁGINA INICIAL VETVITA -->
@@ -157,7 +159,8 @@
         <a href="#" data-page="home">Home</a>
         <a href="#contato" data-page="contato">Contato</a>
         <a href="#empresa" data-page="empresa">Empresa</a>
-        <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
+        <img class="vt-user-icon" src="/img/icon.png" alt="Perfil" onclick="openPopup()">
+
       </nav>
     </header>
 
@@ -189,7 +192,7 @@
             todos os nossos serviços e agendar consultas, exames e muito mais.
           </p>
           <div class="link">
-          <p>Já tem uma conta?</p><a href="#" class="vv-login-link"> Entre aqui.</a>
+          <p>Já tem uma conta?</p><a href="#" class="vv-login-link" onclick="openPopup()"> Entre aqui.</a>
           </div>
         </div>
 
@@ -201,9 +204,7 @@
 
           <button type="submit" class="vv-btn-cadastrar" id="vv-btnCadastro">Cadastrar-se já</button>
 
-          <button type="button" class="vv-btn-google">
-            <img src="/img/google.png" alt="Google"> Entrar com Google
-          </button>
+            <div id="google_login" class="vv-btn-google"></div>
 
           <div class="vv-mini-logo">
             <img src="/img/LogoVetVita.png"  alt="VetVita">
@@ -333,6 +334,80 @@
     </div>
   </div>
 
+  <div id="overlay" class="overlay hidden"></div>
+
+  <!-- POPUP DE LOGIN -->
+<div id="loginPopup" class="popup-overlay">
+    <div class="popup-box">
+        <h2>Entre com sua conta VetVita</h2>
+
+        <form class="popup-form">
+            <label>Informe seu email</label>
+            <input type="email" required>
+
+            <label>Informe seu CPF</label>
+            <input type="text" required>
+
+            <label>Informe sua senha</label>
+            <input type="password" required>
+
+            <div class="popup-buttons">
+                <button class="btn-entrar" type="submit">Entrar</button>
+                <button class="btn-voltar" type="button" onclick="closePopup()">Voltar para página inicial</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
   <script src="/js/script.js"></script>
+  <script>
+  function handleCredentialResponse(response) {
+      // Aqui vem o token codificado JWT
+      const data = parseJwt(response.credential);
+
+      console.log("Usuário logado:", data);
+
+      // Aqui você pode:
+      // • salvar em sessão
+      // • enviar ao backend
+      // • redirecionar usuário
+      alert("Bem-vindo, " + data.name + "!");
+  }
+
+  // Decodificar JSON Web Token
+  function parseJwt(token) {
+      return JSON.parse(atob(token.split('.')[1]));
+  }
+
+  // Inicializa o botão Google
+  window.onload = function () {
+      google.accounts.id.initialize({
+          client_id: "838658462754-at81q9id10d2hq6kdh0ouoeucpctkdar.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+      });
+
+      google.accounts.id.renderButton(
+          document.getElementById("google_login"),
+          {
+              theme: "outline",
+              size: "large",
+              width: "345",
+              shape: "pill"
+          }
+      );
+  };
+</script>
+<script>
+function openPopup() {
+    document.getElementById("loginPopup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("loginPopup").style.display = "none";
+}
+</script>
+
+
 </body>
 </html>

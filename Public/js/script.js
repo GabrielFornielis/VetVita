@@ -314,3 +314,19 @@ function installVetVita() {
     window.vetVitaApp.handleInstallButton();
   }
 }
+
+function openPopup() {
+    document.getElementById("login-popup").classList.remove("hidden");
+    document.getElementById("overlay").classList.remove("hidden");
+    
+    // impede scroll do fundo
+    document.body.style.overflow = "hidden";
+}
+
+function closePopup() {
+    document.getElementById("login-popup").classList.add("hidden");
+    document.getElementById("overlay").classList.add("hidden");
+
+    // ativa scroll novamente
+    document.body.style.overflow = "";
+}
