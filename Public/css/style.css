@@ -1091,7 +1091,6 @@ body {
   padding: 80px 8%;
   max-width: 1200px;
   margin: 0 auto;
-    box-shadow: 
 }
 
 .vv-servicos h2, .vv-exames h2, .vv-vacinas h2 {
@@ -1595,3 +1594,79 @@ body {
     z-index: 999;
     box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
+/* ================================================
+   WIDGET DE ACESSIBILIDADE (LATERAL AZUL)
+   ================================================ */
+
+#acessibilidade-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999999;
+}
+
+#btn-acessibilidade {
+    background: #1e88e5;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: 0.2s;
+}
+
+#btn-acessibilidade:hover {
+    transform: scale(1.05);
+}
+
+#btn-acessibilidade img {
+    width: 35px;
+    filter: brightness(200%);
+}
+
+/* MENU LATERAL */
+#acessibilidade-menu {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999999;
+}
+
+#acessibilidade-menu button {
+    margin: 6px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #1e88e5;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#acessibilidade-menu button:hover {
+    background: #1565c0;
+}
+
+/* ================================================
+   AJUSTES OPCIONAIS DE TIPOGRAFIA
+   ================================================ */
+
+body.contraste-ativo p,
+body.contraste-ativo span,
+body.contraste-ativo li {
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+

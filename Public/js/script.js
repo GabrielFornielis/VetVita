@@ -330,3 +330,7 @@ function closePopup() {
     // ativa scroll novamente
     document.body.style.overflow = "";
 }
+
+const body = document.body;
+const btn = document.getElementById("acessibilidade-btn");
+

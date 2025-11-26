@@ -11,7 +11,6 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
 </head>
-<body>
   <!-- PÁGINA INICIAL VETVITA -->
   <div id="main-zoone" class="site-root">
     <header class="vt-header">
@@ -359,6 +358,16 @@
     </div>
 </div>
 
+<div id="acessibilidade-widget">
+    <button id="btn-acessibilidade" aria-label="Acessibilidade">
+        <img src="img/Acessibilidade.png" alt="Acessibilidade" />
+    </button>
+
+    <div id="acessibilidade-menu">
+        <button id="ler-selecao">🔊 Ler Seleção</button>
+    </div>
+</div>
+
 
   <script src="/js/script.js"></script>
   <script>
@@ -407,6 +416,53 @@ function closePopup() {
     document.getElementById("loginPopup").style.display = "none";
 }
 </script>
+<script>
+/* -------- MENU ABRIR/FECHAR -------- */
+document.getElementById("btn-acessibilidade").onclick = () => {
+    const menu = document.getElementById("acessibilidade-menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+};
+
+/* -------- VOZ FEMININA -------- */
+let vozFeminina = null;
+
+function carregarVozes() {
+    const vozes = speechSynthesis.getVoices();
+
+    vozFeminina =
+        vozes.find(v => v.lang === "pt-BR" && v.name.toLowerCase().includes("female")) ||
+        vozes.find(v => v.lang === "pt-BR" && v.name.toLowerCase().includes("brasil")) ||
+        vozes.find(v => v.lang === "pt-BR") ||
+        vozes.find(v => v.lang.startsWith("pt")) ||
+        vozes[0];
+}
+
+speechSynthesis.onvoiceschanged = carregarVozes;
+carregarVozes();
+
+/* -------- LER SELEÇÃO -------- */
+function lerSelecao() {
+    const texto = window.getSelection().toString().trim();
+
+    if (!texto) {
+        alert("Selecione um texto para ser lido.");
+        return;
+    }
+
+    const msg = new SpeechSynthesisUtterance(texto);
+    msg.lang = "pt-BR";
+    msg.rate = 1;
+    msg.pitch = 1;
+
+    if (vozFeminina) msg.voice = vozFeminina;
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(msg);
+}
+
+document.getElementById("ler-selecao").onclick = lerSelecao;
+</script>
+
 
 
 </body>
