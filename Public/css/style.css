@@ -82,7 +82,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background: #e8d4b2;
+  background: #D6E4A9;
   top: 0;
   z-index: 1000;
 }
@@ -121,8 +121,19 @@ body {
 
 /* ===== HERO SECTION ===== */
 .vt-hero {
-  padding: 45px 60px;
-  background: #f5f1dc;
+  padding: 85px 60px;
+  background: #FEFAE0;
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 
+    inset 0 8px 12px -8px rgba(0,0,0,0.04),
+    inset 0 -8px 12px -8px rgba(0,0,0,0.04);
+  background: 
+    linear-gradient(to bottom, 
+      #FEFAE0 0%, 
+      #FEFAE0 85%, 
+      #f5f0d5 100%);
 }
 
 .vt-hero-content {
@@ -135,7 +146,6 @@ body {
 }
 
 .vt-hero-text h1 {
-
   font-size: 4.5rem;
   line-height: 1;
   margin-bottom: 24px;
@@ -163,129 +173,642 @@ body {
 /* ===== CONTATO SECTION ===== */
 .vt-contato {
   padding: 80px 60px;
+  background-color: #fefae9;
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 
+    inset 0 8px 12px -8px rgba(0,0,0,0.04),
+    inset 0 -8px 12px -8px rgba(0,0,0,0.04);
+  background: 
+    linear-gradient(to bottom, 
+      #FEFAE0 0%, 
+      #FEFAE0 85%, 
+      #f5f0d5 100%);
 }
 
-.vt-contato h2 {
-  margin-bottom: 10px;
-  color: var(--accent-color);
-  margin-left: 5px;
+.vt-contato::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,0.06) 0%, 
+    rgba(0,0,0,0.02) 50%,
+    transparent 100%);
+  pointer-events: none;
 }
 
 .vt-contato-container {
   display: flex;
-  gap: 60px;
+  justify-content: center;
   align-items: flex-start;
-  max-width: 1200px;
+  gap: 60px;
+  max-width: 1400px;
   margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* LADO ESQUERDO - FORMULÁRIO COM TÍTULO */
+.vt-form-side {
+  flex: 2;
+  min-width: 400px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vt-contato h2 {
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #bc6c25;
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding-left: 10px;
 }
 
 .vt-form {
-  flex: 1;
   background: #f9e3c7;
-  padding: 30px;
+  padding: 35px;
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  height: 380px;
+  display: flex;
+  flex-direction: column;
 }
 
-.form-group {
+.vt-form h3 {
   margin-bottom: 20px;
-}
-
-.vt-form label {
-  display: block;
+  color: #bc6c25;
+  font-size: 1.3rem;
+  text-align: center;
   font-weight: 600;
-  margin-bottom: 8px;
 }
 
-.vt-form textarea,
-.vt-form input {
+.vt-form textarea {
   width: 100%;
-  padding: 12px;
-  margin-top: 10px;
+  padding: 18px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 16px;
   resize: vertical;
-}
-
-.vt-form textarea {
-  min-height: 75px;
+  min-height: 120px;
+  font-family: inherit;
+  flex-grow: 1;
+  margin-bottom: 15px;
 }
 
 .vt-note {
   font-size: 0.9rem;
-  color: var(--text-light);
-  margin: 12px 0;
+  color: #bc6c25;
+  margin: 15px 0;
+  text-align: center;
+  line-height: 1.4;
+  font-style: italic;
 }
 
 .vt-buttons {
   display: flex;
-  gap: 12px;
-  margin-top: 20px;
-  justify-content: space-between;
+  gap: 15px;
+  margin-top: auto;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* LADO DIREITO - MAPA */
 .vt-map {
   flex: 1;
+  min-width: 350px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
-.map-img {
+.vt-map iframe {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 500px;
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: none;
+  margin-top: 78px;
 }
 
-/* ===== LOGIN SECTION ===== */
+/* ===== RESPONSIVIDADE CONTATO ===== */
+@media (max-width: 1200px) {
+  .vt-contato-container {
+    gap: 40px;
+    max-width: 1100px;
+  }
+  
+  .vt-form-side {
+    max-width: 600px;
+  }
+  
+  .vt-map {
+    max-width: 450px;
+  }
+  
+  .vt-map iframe {
+    height: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vt-contato-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vt-form-side {
+    max-width: 800px;
+    width: 100%;
+    order: 1;
+  }
+  
+  .vt-contato h2 {
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .vt-map {
+    max-width: 800px;
+    width: 100%;
+    order: 2;
+  }
+  
+  .vt-map iframe {
+    height: 400px;
+    margin-top: 0;
+  }
+  
+  .vt-form {
+    height: auto;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vt-contato {
+    padding: 60px 30px;
+  }
+  
+  .vt-contato h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .vt-contato-container {
+    gap: 30px;
+  }
+  
+  .vt-form-side {
+    min-width: unset;
+    max-width: 100%;
+  }
+  
+  .vt-form {
+    padding: 25px;
+    height: auto;
+    min-height: 320px;
+  }
+  
+  .vt-map {
+    min-width: unset;
+    max-width: 100%;
+  }
+  
+  .vt-map iframe {
+    height: 350px;
+  }
+  
+  .vt-form h3 {
+    font-size: 1.2rem;
+  }
+  
+  .vt-form textarea {
+    min-height: 100px;
+    padding: 15px;
+  }
+  
+  .vt-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .vt-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vt-contato {
+    padding: 40px 20px;
+  }
+  
+  .vt-contato h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .vt-form {
+    padding: 20px;
+    min-height: 280px;
+  }
+  
+  .vt-map iframe {
+    height: 300px;
+  }
+  
+  .vt-form textarea {
+    min-height: 80px;
+    padding: 12px;
+  }
+  
+  .vt-buttons .btn {
+    max-width: 100%;
+  }
+}
+
+/* === LOGIN ADMIN === */
 .vt-login {
-  padding: 60px;
-  max-width: 600px;
-  margin: 0 auto;
+  background: #FEFAE0;
+  padding: 80px 60px;
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 
+    inset 0 8px 12px -8px rgba(0,0,0,0.04),
+    inset 0 -8px 12px -8px rgba(0,0,0,0.04);
+  background: 
+    linear-gradient(to bottom, 
+      #FEFAE0 0%, 
+      #FEFAE0 85%, 
+      #f5f0d5 100%);
 }
 
+.vt-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,0.06) 0%, 
+    rgba(0,0,0,0.02) 50%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.vt-login-container {
+  max-width: 600px;
+}
+
+.vt-login-container h2 {
+  font-size: 2.2rem;
+  color: #5c6f2a;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Formulário Admin SEM CARD */
 .vt-admin-form {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: var(--radius);
+  max-width: 500px;
+}
+
+/* Grupos de formulário */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Labels */
+.vt-admin-form label {
+  color: #4b5924;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs */
+.vt-admin-form input[type="email"],
+.vt-admin-form input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #7e8f45;
+  background: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-top: 5px;
+}
+
+.vt-admin-form input:focus {
+  border-color: #5c6f2a;
+  box-shadow: 0 0 0 3px rgba(92, 111, 42, 0.1);
+}
+
+/* Botões do Login Admin */
+.vt-admin-form .vt-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-enter {
+  background: #5c6f2a;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.btn-enter:hover {
+  background: #4a5c22;
+  transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
 
-/* ===== SOBRE SECTION ===== */
-.vt-sobre {
-  padding: 80px 60px;
-  background: #f8f4e8;
+.btn-clear {
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #5c6f2a;
+  background: transparent;
+  color: #5c6f2a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
 }
 
-.vt-sobre-content {
+.btn-clear:hover {
+  background: #e8e4c0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ===== RESPONSIVIDADE LOGIN ===== */
+@media (max-width: 768px) {
+  .vt-login {
+    padding: 60px 30px;
+  }
+  
+  .vt-login-container {
+    max-width: 100%;
+  }
+  
+  .vt-login-container h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .vt-admin-form {
+    max-width: 100%;
+  }
+  
+  .vt-admin-form .vt-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-enter,
+  .btn-clear {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .vt-login {
+    padding: 40px 20px;
+  }
+  
+  .vt-login-container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  .vt-admin-form label {
+    font-size: 1rem;
+  }
+  
+  .vt-admin-form input[type="email"],
+  .vt-admin-form input[type="password"] {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-enter,
+  .btn-clear {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* === SEÇÃO SOBRE A EMPRESA === */
+.vt-about {
+  background: #FEFAE0;
+  padding: 80px 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 
+    inset 0 8px 12px -8px rgba(0,0,0,0.04),
+    inset 0 -8px 12px -8px rgba(0,0,0,0.04);  
+  background: 
+    linear-gradient(to bottom, 
+      #FEFAE0 0%, 
+      #FEFAE0 85%, 
+      #f5f0d5 100%);
 }
 
-.sobre-pet-img {
-  width: 300px;
-  height: 250px;
+.vt-about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,0.06) 0%, 
+    rgba(0,0,0,0.02) 50%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+/* Imagem */
+.about-image img {
   object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 12px;
 }
 
-.vt-sobre-text {
-  flex: 1;
+/* Texto */
+.about-text {
+  max-width: 500px;
 }
 
-.vt-sobre-text h2 {
+.about-text h2 {
+  font-size: 3.2rem;
+  color: #5c6f2a;
   margin-bottom: 20px;
-  color: var(--primary-color);
-  font-size: 2rem;
+  line-height: 1.2;
 }
 
-.vt-sobre-text p {
-  color: var(--text-light);
-  line-height: 1.6;
-  margin-bottom: 24px;
+.about-text p {
+  color: #6d6d4f;
   font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Botão */
+.about-button {
+  display: inline-block;
+  background: #b76b2f;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.about-button:hover {
+  background: #9d5725;
+  transform: translateY(-2px);
+}
+
+/* ===== LINK DE ACESSO VIA WEB ===== */
+.web-access-link {
+  margin-top: 15px;
+}
+
+.web-link {
+  margin-left: 65px;
+  color: #5c6f2a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #5c6f2a;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.web-link:hover {
+  color: #4a5c22;
+  border-bottom-color: #4a5c22;
+}
+
+/* ===== RESPONSIVIDADE ABOUT ===== */
+@media (max-width: 1024px) {
+  .vt-about {
+    gap: 40px;
+    padding: 60px 30px;
+  }
+  
+  
+  .about-text h2 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vt-about {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 60px 30px;
+  }
+
+  .web-link {
+  margin-left: 1px;
+  color: #5c6f2a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #5c6f2a;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+  
+
+  
+  .about-text {
+    max-width: 100%;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vt-about {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .vt-about {
+    padding: 30px 15px;
+  }
+  
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-image img {
+    max-width: 250px;
+    height: 180px;
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -327,19 +850,20 @@ body {
   max-width: 200px;
 }
 
-/* ===== VETVITA APP STYLES ===== */
+/* ===== VETVITA APP STYLES ATUALIZADO ===== */
 #vetvita-app {
   min-height: 100vh;
-  background: var(--light-bg);
+  background: #FEFAE0;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
+/* HEADER */
 .vv-header {
+  padding: 20px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
-  background: #e7cda2;
-  border-bottom: 1px solid var(--border-color);
+  background: #f1dfc4;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -352,312 +876,505 @@ body {
 }
 
 .vv-logo {
-  height: 32px;
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 
 .vv-brand strong {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--text-dark);
 }
 
-.vetvita-single-page {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-/* Seções VetVita */
-.vv-hero-section,
-.vv-services-section,
-.vv-agendamento-section {
-  padding: 24px 16px;
-}
-
-.vv-services-section {
-  background: #f8f4e8;
-}
-
-.vv-agendamento-section {
-  background: var(--light-bg);
-}
-
-.vv-title {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 16px;
-  text-align: left;
-  line-height: 1.2;
-}
-
-.vv-sub {
-  color: var(--text-light);
-  line-height: 1.5;
-  margin-bottom: 20px;
-  font-size: 15px;
-}
-
-.vv-section-divider {
-  height: 2px;
-  background: rgba(90, 52, 20, 0.15);
-  margin: 24px 0;
-}
-
-.vv-section-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text-dark);
-}
-
-.vv-section-sub {
-  color: var(--text-light);
-  line-height: 1.4;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.vv-form-label {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--text-dark);
-  display: block;
-}
-
-.vv-form input[type="text"],
-.vv-form input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  margin-bottom: 16px;
-  background: #fff;
-  font-size: 15px;
-}
-
-.vv-checkbox-group {
+/* HERO */
+.vv-hero {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  padding: 8px 0;
+  padding: 60px 8%;
+  background: #FEFAE0;
+  box-shadow: 
+    inset 0 8px 15px -8px rgba(0,0,0,0.08),
+    inset 0 -8px 15px -8px rgba(0,0,0,0.08);
 }
 
-.vv-checkbox-group input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--primary-color);
-}
-
-.vv-checkbox-group label {
-  font-size: 15px;
-  color: var(--text-dark);
-  font-weight: 600;
-}
-
-.vv-btn-primary {
+.vv-hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  background: var(--accent-color);
-  color: #fff;
-  padding: 14px;
-  border-radius: 8px;
-  border: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vv-hero-text {
+  width: 50%;
+}
+
+.vv-hero-text h1 {
+  font-size: 3rem;
+  color: #436b1e;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.vv-hero-text p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.vv-hero-img {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.vv-hero-img .hero-pet-img {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* CADASTRO */
+.vv-cadastro-section {
+  background: #FEFAE0;
+  padding: 80px 0;
+  box-shadow: 
+    inset 0 8px 15px -8px rgba(0,0,0,0.08),
+    inset 0 -8px 15px -8px rgba(0,0,0,0.08);
+}
+
+.vv-cadastro-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  background: #93A556;
+  border-radius: 20px;
+  display: flex;
+  box-shadow: var(--shadow);
+}
+
+.vv-cadastro-info {
+  width: 50%;
+  padding: 50px;
+}
+
+.vv-cadastro-info h2 {
+  color: #FEFAE0;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
   font-weight: 700;
-  font-size: 16px;
-  margin: 16px 0;
-  cursor: pointer;
 }
 
-.vv-btn-secondary {
-  background: var(--secondary-color);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: none;
+.vv-cadastro-info p {
+  color: #FEFAE0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.vv-login-link {
+  color: var(--accent-color);
   font-weight: 600;
-  cursor: pointer;
-  margin-top: 12px;
-  font-size: 14px;
-  width: 100%;
+  font-size: 1rem;
+  margin-left: 5px;
 }
 
-.vv-social-login {
-  margin: 20px 0;
+.link{
+  display: flex;
+}
+
+.link p{
+  color: #3C4E27;
+}
+
+.link a{
+  color: #FFFFFF;
+  height: 0px;
+}
+
+.vv-cadastro-form {
+  width: 50%;
+  padding: 50px;
+  background: #fff;
+  border: 2px solid #93A556;
+  border-radius: 0 20px 20px 0;
+  border-left: none; /* Remove a borda esquerda já que tem o container do lado */
+}
+
+.vv-cadastro-form input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.vv-cadastro-form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.vv-btn-cadastrar {
+  width: 100%;
+  padding: 15px;
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.vv-btn-cadastrar:hover {
+  background: #9d5725;
+  transform: translateY(-2px);
 }
 
 .vv-btn-google {
   width: 100%;
-  background: #fff;
-  color: #333;
+  margin-top: 15px;
   padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.vv-login-link {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.vv-login-link p {
-  color: var(--text-light);
-  font-size: 14px;
-}
-
-.vv-link {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* Serviços */
-.vv-service-category {
-  margin-bottom: 24px;
-}
-
-.vv-service-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: var(--text-dark);
-  text-align: center;
-}
-
-.vv-service-description {
-  color: var(--text-light);
-  line-height: 1.5;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.vv-service-grid {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
-}
-
-.vv-service-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: var(--radius);
-  border: 2px solid rgba(162, 86, 18, 0.12);
-  text-align: center;
-  position: relative;
-}
-
-.service-icon {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.vv-service-card h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text-dark);
-  line-height: 1.3;
-}
-
-.vv-service-card p {
-  color: var(--text-light);
-  line-height: 1.4;
-  margin-bottom: 12px;
-  font-size: 14px;
-}
-
-/* Time grid */
-.vv-time-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.vv-time-slot {
-  padding: 12px 8px;
-  border: 2px solid rgba(162, 86, 18, 0.3);
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
   cursor: pointer;
-  background: #fff;
-  font-size: 14px;
+  background: white;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
-.vv-time-slot.empty {
-  border: none;
-  background: transparent;
-  cursor: default;
+.vv-btn-google:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
-.vv-time-slot:hover:not(.empty) {
-  background: #f0e6d2;
+.vv-btn-google img {
+  width: 20px;
+  height: 20px;
 }
 
-.vv-time-slot.selected {
-  background: var(--accent-color);
-  color: white;
-  border-color: var(--accent-color);
-}
-
-/* Seleção de pet */
-.vv-pet-selection {
-  margin-bottom: 20px;
-}
-
-.vv-pet-option {
+.vv-mini-logo {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px;
-  background: #fff;
-  border-radius: 8px;
-  border: 2px solid rgba(162, 86, 18, 0.12);
+  justify-content: center;
 }
 
-.vv-pet-option input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--primary-color);
+.vv-mini-logo img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
 
-.vv-pet-option label {
-  font-size: 15px;
-  color: var(--text-dark);
+
+
+.vv-mini-logo span {
   font-weight: 600;
+  color: var(--text-dark);
 }
 
-.vv-price-section {
-  background: #fff;
-  padding: 20px;
-  border-radius: var(--radius);
-  border: 2px solid rgba(162, 86, 18, 0.12);
-  margin-top: 20px;
+/* SERVIÇOS */
+.vv-servicos, .vv-exames, .vv-vacinas {
+  padding: 80px 8%;
+  max-width: 1200px;
+  margin: 0 auto;
+    box-shadow: 
+}
+
+.vv-servicos h2, .vv-exames h2, .vv-vacinas h2 {
   text-align: center;
+  margin-bottom: 50px;
+  color: #8a4d00;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-.vv-price {
-  font-size: 18px;
+.vv-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.vv-card {
+  background: #eebf8c;
+  padding: 30px 25px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.vv-service-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.vv-card h3 {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.vv-card p {
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.vv-agendar-btn {
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  background: #a25f24;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.vv-agendar-btn:hover {
+  background: #8a4d00;
+  transform: translateY(-2px);
+}
+
+/* CORES DOS CARDS */
+.vv-cards-green .vv-card {
+  background: #d7e8be;
+}
+
+.vv-cards-green .vv-agendar-btn {
+  background: #6c8c41;
+}
+
+.vv-cards-green .vv-agendar-btn:hover {
+  background: #5a7534;
+}
+
+.vv-cards-orange .vv-card {
+  background: #efc6a3;
+}
+
+.vv-cards-orange .vv-agendar-btn {
+  background: #c27b32;
+}
+
+.vv-cards-orange .vv-agendar-btn:hover {
+  background: #a25f24;
+}
+
+/* FOOTER */
+.vv-footer {
+  padding: 60px 0 40px;
+  background: #d4e5b3;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.vv-social {
+  margin-bottom: 30px;
+}
+
+.vv-social img {
+  width: 32px;
+  height: 32px;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.vv-social img:hover {
+  transform: scale(1.1);
+}
+
+.vv-footer hr {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.2);
+  margin: 30px auto;
+  max-width: 200px;
+}
+
+.vv-footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.vv-footer-logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.vv-footer-logo p {
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 16px;
 }
 
-.vv-footer {
-  padding: 20px;
-  text-align: center;
-  color: #7a5a2f;
-  background: #e7cda2;
-  margin-top: 0;
-  font-size: 14px;
+.vv-footer small {
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ===== RESPONSIVIDADE VETVITA APP ===== */
+@media (max-width: 1200px) {
+  .vv-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .vv-hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vv-header {
+    padding: 15px 5%;
+  }
+  
+  .vv-hero {
+    padding: 40px 5%;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .vv-hero-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .vv-hero-text, .vv-hero-img {
+    width: 100%;
+  }
+  
+  .vv-hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .vv-cadastro-container {
+    flex-direction: column;
+    width: 95%;
+  }
+  
+  .vv-cadastro-info, .vv-cadastro-form {
+    width: 100%;
+    padding: 30px;
+  }
+  
+  .vv-cadastro-form {
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .vv-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .vv-servicos, .vv-exames, .vv-vacinas {
+    padding: 60px 5%;
+  }
+  
+  .vv-servicos h2, .vv-exames h2, .vv-vacinas h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vv-header {
+    padding: 12px 4%;
+  }
+  
+  .vv-logo {
+    height: 32px;
+  }
+  
+  .vv-brand strong {
+    font-size: 1.2rem;
+  }
+  
+  .vv-hero {
+    padding: 30px 4%;
+  }
+  
+  .vv-hero-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .vv-hero-text p {
+    font-size: 1rem;
+  }
+  
+  .vv-hero-img .hero-pet-img {
+    height: 200px;
+  }
+  
+  .vv-cadastro-section {
+    padding: 40px 0;
+  }
+  
+  .vv-cadastro-info, .vv-cadastro-form {
+    padding: 25px 20px;
+  }
+  
+  .vv-cadastro-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .vv-servicos, .vv-exames, .vv-vacinas {
+    padding: 40px 4%;
+  }
+  
+  .vv-servicos h2, .vv-exames h2, .vv-vacinas h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .vv-card {
+    padding: 25px 20px;
+  }
+  
+  .vv-footer {
+    padding: 40px 0 30px;
+  }
+  
+  .vv-social img {
+    width: 28px;
+    height: 28px;
+    margin: 0 15px;
+  }
 }
 
 /* ===== MODAL ===== */
@@ -700,10 +1417,18 @@ body {
   justify-content: center;
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== BOTÃO VOLTAR SEMPRE ESCONDIDO ===== */
+.back-to-zoone {
+  display: none !important;
+}
+
+.vv-header .back-to-zoone {
+  display: none !important;
+}
+
+/* ===== RESPONSIVIDADE GERAL ===== */
 @media (max-width: 1024px) {
-  .vt-hero-content,
-  .vt-sobre-content {
+  .vt-hero-content {
     flex-direction: column;
     text-align: center;
   }
@@ -725,14 +1450,8 @@ body {
     gap: 15px;
   }
   
-  .vt-hero,
-  .vt-contato,
-  .vt-sobre {
+  .vt-hero, .vt-contato, .vt-sobre {
     padding: 40px 20px;
-  }
-  
-  .vt-contato-container {
-    flex-direction: column;
   }
   
   .vt-hero-text h1 {
@@ -752,11 +1471,6 @@ body {
     height: 220px;
   }
   
-  .sobre-pet-img {
-    width: 250px;
-    height: 200px;
-  }
-  
   .modal-buttons {
     flex-direction: column;
   }
@@ -767,33 +1481,9 @@ body {
     font-size: 1.8rem;
   }
   
-  .vetvita-single-page {
-    padding: 0 12px;
-  }
-  
   .hero-pet-img {
     width: 100%;
     max-width: 280px;
     height: 200px;
-  }
-  
-  .sobre-pet-img {
-    width: 100%;
-    max-width: 220px;
-    height: 180px;
-  }
-  
-  .vv-time-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 768px) {
-  .vv-service-grid {
-    flex-direction: row;
-  }
-  
-  .vv-service-card {
-    flex: 1;
   }
 }

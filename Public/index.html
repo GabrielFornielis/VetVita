@@ -6,21 +6,21 @@
   <title>VetVita – Saúde Animal com Responsabilidade e Qualidade</title>
 
   <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="/img/icons/IcoVetVita-192x192.png">
+  <link rel="icon" type="image/png" href="/img/icons/IcoVetVita192x192.png">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <!-- PÁGINA INICIAL ZOONE -->
+  <!-- PÁGINA INICIAL VETVITA -->
   <div id="main-zoone" class="site-root">
     <header class="vt-header">
       <div class="vt-logo-area">
-        <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita" class="vt-logo">
+        <img src="/img/LogoVetVita.png" alt="VetVita" class="vt-logo">
       </div>
 
       <nav class="vt-nav">
         <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="contato">Contato</a>
-        <a href="#" data-page="empresa">Empresa</a>
+        <a href="#contato" data-page="contato">Contato</a>
+        <a href="#empresa" data-page="empresa">Empresa</a>
         <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
       </nav>
     </header>
@@ -43,82 +43,91 @@
       </div>
     </section>
 
-    <!-- CONTATO SECTION -->
-    <section class="vt-contato" id="contato">
+<!-- CONTATO SECTION -->
+<section class="vt-contato" id="contato">
+  <div class="vt-contato-container">
+    <!-- LADO ESQUERDO - FORMULÁRIO -->
+    <div class="vt-form-side">
       <h2>Gostaria de nos contatar?</h2>
+      
+      <form class="vt-form">
+        <h3>Envie perguntas, sugestões ou críticas por este formulário.</h3>
+        <textarea placeholder="Escreva aqui..."></textarea>
 
-      <div class="vt-contato-container">
-        <form class="vt-form">
-          <h3>Envie perguntas, sugestões ou críticas por <br>este formulário.</h3>
-          <textarea placeholder="Escreva aqui..."></textarea>
-
-          <p class="vt-note">
-            Os comentários enviados são anônimos. Usamos somente para melhorar nossos serviços.
-          </p>
-
-          <div class="vt-buttons">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <button type="reset" class="btn btn-secondary">Limpar</button>
-          </div>
-        </form>
-
-        <div class="vt-map">
-          <!-- Iframe direto (pode não funcionar se o domínio bloquear embeding) -->
-<iframe
-  src="https://maps.app.goo.gl/9RKSwkPZvLcddoX58"
-  width="600"
-  height="450"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- LOGIN ADMIN -->
-    <section class="vt-login">
-      <h2>Entre com sua conta de administrador</h2>
-
-      <form class="vt-admin-form">
-        <div class="form-group">
-          <label>Informe seu email:</label>
-          <input type="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Informe a senha disponibilizada pelo hospital:</label>
-          <input type="password" required>
-        </div>
+        <p class="vt-note">
+          Os comentários enviados são anônimos. Os utilizamos somente para aprimorar nossos serviços e tornar o VetVita cada vez melhor para você!
+        </p>
 
         <div class="vt-buttons">
-          <button type="submit" class="btn btn-primary">Entrar</button>
-          <button type="reset" class="btn btn-secondary">Limpar formulário</button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="reset" class="btn btn-secondary">Limpar</button>
         </div>
       </form>
-    </section>
+    </div>
 
-    <!-- EMPRESA SECTION -->
-    <section class="vt-sobre" id="empresa">
-      <div class="vt-sobre-content">
-        <div class="vt-sobre-img">
-          <img src="/img/cachorro.png" alt="Cachorro" class="sobre-pet-img">
-        </div>
+    <!-- LADO DIREITO - MAPA -->
+    <div class="vt-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3655.5623722060473!2d-46.607670603210444!3d-23.620022999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sveterin%C3%A1rio!5e0!3m2!1spt-BR!2sbr!4v1764107859155!5m2!1spt-BR!2sbr" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
 
-        <div class="vt-sobre-text">
-          <h2>Sobre nossa empresa</h2>
-          <p>
-            A VetVita é um hospital veterinário voltado para o cuidado e bem-estar dos animais
-            de estimação. Oferecemos um atendimento prático e organizado, com agendamento online
-            e acompanhamento fácil do histórico de consultas.
-          </p>
+<!-- LOGIN ADMIN -->
+<section class="vt-login">
+  <div class="vt-login-container">
+    <h2>Entre com sua conta de administrador</h2>
 
-          <button class="btn btn-accent" id="install-vetvita">VetVita Agendamentos</button>
-        </div>
+    <form class="vt-admin-form">
+      <div class="form-group">
+        <label for="admin-email">Informe seu email:</label>
+        <input type="email" id="admin-email" required>
       </div>
-    </section>
+      
+      <div class="form-group">
+        <label for="admin-password">Informe a senha disponibilizada pelo hospital:</label>
+        <input type="password" id="admin-password" required>
+      </div>
+
+      <div class="vt-buttons">
+        <button type="submit" class="btn-enter">Entrar</button>
+        <button type="reset" class="btn-clear">Limpar formulário</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="vt-about">
+    <div class="about-image">
+        <img src="/img/cachorro.png" alt="cachorro">
+    </div>
+
+    <div class="about-text" id="empresa">
+        <h2>Sobre nossa empresa</h2>
+
+        <p>
+            A VetVita é um hospital veterinário voltado para o cuidado e bem-estar dos animais 
+            de estimação. Oferecemos um atendimento prático e organizado, com agendamento online 
+            e acompanhamento fácil do histórico de consultas.
+        </p>
+
+        <p>
+            Acesse já nosso site de agendamento de consultas clicando no botão abaixo.
+        </p>
+
+        <a href="#" class="about-button">VetVita Agendamentos</a>
+
+        <div class="web-access-link">
+            <a href="#" class="web-link">Acessar via Web</a>
+        </div>
+    </div>
+</section>
+
+
 
     <!-- FOOTER -->
     <footer class="vt-footer">
@@ -130,161 +139,186 @@
 
       <hr>
 
-      <img src="/img/LogoVetVita(ComFundo).png" class="vt-footer-logo" alt="VetVita">
+      <img src="/img/LogoVetVita.png" class="vt-footer-logo" alt="VetVita">
 
       <p>©VetVita todos os direitos reservados</p>
     </footer>
   </div>
 
-  <!-- PÁGINA VETVITA APP -->
+    <!-- PÁGINA VETVITA APP ATUALIZADA -->
   <div id="vetvita-app" class="hidden">
-    <div class="vv-header">
-      <div class="vv-brand">
-        <img src="/img/LogoVetVita(ComFundo).png" alt="VetVita" class="vv-logo">
-        <strong>VetVita</strong>
+    <!-- HEADER -->
+    <header class="vt-header">
+      <div class="vt-logo-area">
+        <img src="/img/LogoVetVita.png" alt="VetVita" class="vt-logo">
       </div>
-      <button class="btn btn-outline back-to-zoone" data-page="home">← Voltar</button>
-    </div>
 
-    <div class="vetvita-single-page">
-      <!-- Seção 1: Hero/Cadastro -->
-      <section class="vv-hero-section">
-        <h1 class="vv-title">Seu pet em<br>boas patas.</h1>
-        <p class="vv-sub">Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade. Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias e exames especializados, garantindo a saúde e o bem-estar de seu pet.</p>
+      <nav class="vt-nav">
+        <a href="#" data-page="home">Home</a>
+        <a href="#contato" data-page="contato">Contato</a>
+        <a href="#empresa" data-page="empresa">Empresa</a>
+        <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
+      </nav>
+    </header>
 
-        <div class="vv-section-divider"></div>
-
-        <h3 class="vv-section-title">Cadastre-se para acessar nossos serviços completos.</h3>
-        <p class="vv-section-sub">Crie sua conta para ter acesso a todos os nossos serviços e agendar consultas, exames e muito mais.</p>
-
-        <div class="vv-section-divider"></div>
-
-        <div class="vv-form">
-          <h4 class="vv-form-label">Informe seu nome</h4>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
-          
-          <div class="vv-checkbox-group">
-            <input type="checkbox" id="cpf-check">
-            <label for="cpf-check">Informe seu CPF</label>
-          </div>
-          
-          <div class="vv-checkbox-group">
-            <input type="checkbox" id="senha-check">
-            <label for="senha-check">Crie uma senha</label>
-          </div>
-          
-          <button class="vv-btn-primary" id="btnCadastro">Cadastre-se já!</button>
+    <!-- HERO -->
+    <section class="vv-hero">
+      <div class="vv-hero-content">
+        <div class="vv-hero-text">
+          <h1>Seu pet em <br>boas patas.</h1>
+          <p>
+            Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade.
+            Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias
+            e exames especializados, garantindo a saúde e o bem-estar do seu pet.
+          </p>
         </div>
 
-        <div class="vv-social-login">
-          <button class="vv-btn-google">
-            Continue com o Google
+        <div class="vv-hero-img">
+          <img src="/img/gato.png" alt="Gato" class="hero-pet-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD DE CADASTRO -->
+    <section class="vv-cadastro-section">
+      <div class="vv-cadastro-container">
+        <div class="vv-cadastro-info">
+          <h2>Cadastre-se para <br>acessar nossos <br>serviços completos.</h2>
+          <p>
+            Caso ainda não esteja inscrito, considere se cadastrar em nosso site para ter acesso a
+            todos os nossos serviços e agendar consultas, exames e muito mais.
+          </p>
+          <div class="link">
+          <p>Já tem uma conta?</p><a href="#" class="vv-login-link"> Entre aqui.</a>
+          </div>
+        </div>
+
+        <form class="vv-cadastro-form">
+          <input type="text" placeholder="Informe seu nome" id="vv-nome">
+          <input type="email" placeholder="Informe seu email" id="vv-email">
+          <input type="text" placeholder="Informe seu CPF" id="vv-cpf">
+          <input type="password" placeholder="Crie uma senha" id="vv-senha">
+
+          <button type="submit" class="vv-btn-cadastrar" id="vv-btnCadastro">Cadastrar-se já</button>
+
+          <button type="button" class="vv-btn-google">
+            <img src="/img/google.png" alt="Google"> Entrar com Google
           </button>
-        </div>
 
-        <div class="vv-login-link">
-          <p>Já tem uma conta? <a href="#" class="vv-link">Entre aqui.</a></p>
-        </div>
-      </section>
-
-      <!-- Seção 2: Serviços -->
-      <section class="vv-services-section">
-        <div class="vv-service-category">
-          <h2 class="vv-service-title">Consultas veterinárias</h2>
-          
-          <div class="vv-service-grid">
-            <div class="vv-service-card">
-              <img src="/img/consulta-geral.png" alt="Consulta Geral" class="service-icon">
-              <h3>Consulta clínica<br>geral</h3>
-              <p>Avaliação completa<br>da saúde do pet.</p>
-            </div>
-            
-            <div class="vv-service-card">
-              <img src="/img/emergencia.png" alt="Emergência" class="service-icon">
-              <h3>Consulta de<br>emergência</h3>
-              <p>Atendimento rápido<br>para casos urgentes.</p>
-            </div>
+          <div class="vv-mini-logo">
+            <img src="/img/LogoVetVita.png"  alt="VetVita">
           </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONSULTAS -->
+    <section class="vv-servicos">
+      <h2>Consultas veterinárias</h2>
+
+      <div class="vv-cards">
+        <div class="vv-card">
+          <h3>Consulta clínica geral</h3>
+          <p>Avaliação completa da saúde do pet.</p>
+          <button class="vv-agendar-btn" data-service="consulta-geral">Agendar</button>
         </div>
 
-        <div class="vv-section-divider"></div>
-
-        <div class="vv-service-category">
-          <h2 class="vv-service-title">Exames especializados</h2>
-          
-          <div class="vv-service-grid">
-            <div class="vv-service-card">
-              <img src="/img/exame-sangue.png" alt="Exame Sangue" class="service-icon">
-              <h3>Exame de sangue<br>completo</h3>
-              <p>Para detectar infecções e<br>avaliar a saúde geral.</p>
-            </div>
-            
-            <div class="vv-service-card">
-              <img src="/img/ultrassom.png" alt="Ultrassom" class="service-icon">
-              <h3>Ultrassonografia<br>abdominal</h3>
-              <p>Visualização interna<br>de órgãos.</p>
-            </div>
-          </div>
+        <div class="vv-card">
+          <h3>Consulta de emergência</h3>
+          <p>Atendimento rápido para casos urgentes.</p>
+          <button class="vv-agendar-btn" data-service="emergencia">Agendar</button>
         </div>
 
-        <div class="vv-section-divider"></div>
-
-        <div class="vv-service-category">
-          <h2 class="vv-service-title">Vacinas Comuns</h2>
-          
-          <div class="vv-service-grid">
-            <div class="vv-service-card">
-              <img src="/img/vacina-v8.png" alt="Vacina V8" class="service-icon">
-              <h3>Vacina V8 ou V10</h3>
-              <p>Proteção contra doenças<br>vitais graves.</p>
-              <button class="vv-btn-secondary vv-agendar-btn" data-service="v8v10">Agendar</button>
-            </div>
-            
-            <div class="vv-service-card">
-              <img src="/img/vacina-raiva.png" alt="Vacina Raiva" class="service-icon">
-              <h3>Vacina antirrábica</h3>
-              <p>Obrigatória e essencial<br>para todos os pets.</p>
-              <button class="vv-btn-secondary vv-agendar-btn" data-service="raiva">Agendar</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Seção 3: Agendamento V8/V10 -->
-      <section class="vv-agendamento-section">
-        <h2 class="vv-service-title">Vacina V8 ou V10</h2>
-        <p class="vv-service-description">A vacina V8 para cães é uma vacina polivalente essencial na rotina de cuidados veterinários. Ela protege os cães contra oito doenças graves, ajudando a prevenir infecções contagiosas e potencialmente fatais.</p>
-
-        <div class="vv-section-divider"></div>
-
-        <h3 class="vv-form-label">Selecione a data e horário disponíveis:</h3>
-        
-        <div class="vv-time-grid">
-          <div class="vv-time-slot">9:00 - 25/11</div>
-          <div class="vv-time-slot">11:30 - 23/11</div>
-          <div class="vv-time-slot">14:40 - 25/11</div>
-          <div class="vv-time-slot empty"></div>
+        <div class="vv-card">
+          <h3>Consulta especializada em dermatologia</h3>
+          <p>Para tratar alergias, coceiras e problemas de pele.</p>
+          <button class="vv-agendar-btn" data-service="dermatologia">Agendar</button>
         </div>
 
-        <div class="vv-section-divider"></div>
+        <div class="vv-card">
+          <h3>Acompanhamento geriátrico</h3>
+          <p>Acompanhamento de animais idosos.</p>
+          <button class="vv-agendar-btn" data-service="geriatria">Agendar</button>
+        </div>
+      </div>
+    </section>
 
-        <h3 class="vv-form-label">Selecione seu pet</h3>
-        
-        <div class="vv-pet-selection">
-          <div class="vv-pet-option">
-            <input type="radio" id="pet1" name="pet" checked>
-            <label for="pet1">Selecione seu pet</label>
-          </div>
+    <!-- EXAMES -->
+    <section class="vv-exames">
+      <h2>Exames especializados</h2>
+
+      <div class="vv-cards vv-cards-green">
+        <div class="vv-card">
+          <h3>Exame de sangue completo</h3>
+          <p>Para detectar infecções e avaliar a saúde geral.</p>
+          <button class="vv-agendar-btn" data-service="exame-sangue">Agendar</button>
         </div>
 
-        <div class="vv-price-section">
-          <p class="vv-price">Valor do serviço: R$ 120,00</p>
-          <button class="vv-btn-primary" id="finalizar-agendamento">Finalizar Agendamento</button>
+        <div class="vv-card">
+          <h3>Ultrassonografia abdominal</h3>
+          <p>Visualização interna de órgãos.</p>
+          <button class="vv-agendar-btn" data-service="ultrassom">Agendar</button>
         </div>
-      </section>
-    </div>
 
-    <div class="vv-footer">© VetVita todos os direitos reservados</div>
+        <div class="vv-card">
+          <h3>Raio-X digital</h3>
+          <p>Para diagnóstico de fraturas e problemas ósseos.</p>
+          <button class="vv-agendar-btn" data-service="raio-x">Agendar</button>
+        </div>
+
+        <div class="vv-card">
+          <h3>Eletrocardiograma (ECG)</h3>
+          <p>Avaliação do ritmo cardíaco.</p>
+          <button class="vv-agendar-btn" data-service="ecg">Agendar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VACINAS -->
+    <section class="vv-vacinas">
+      <h2>Vacinas Comuns</h2>
+
+      <div class="vv-cards vv-cards-orange">
+        <div class="vv-card">
+          <h3>Vacina V8 ou V10 (para cães)</h3>
+          <p>Proteção contra doenças virais graves.</p>
+          <button class="vv-agendar-btn" data-service="v8-v10">Agendar</button>
+        </div>
+
+        <div class="vv-card">
+          <h3>Vacina antirrábica</h3>
+          <p>Obrigatória e essencial para todos os pets.</p>
+          <button class="vv-agendar-btn" data-service="raiva">Agendar</button>
+        </div>
+
+        <div class="vv-card">
+          <h3>Vacina tríplice felina (V3 ou V4)</h3>
+          <p>Proteção básica para gatos.</p>
+          <button class="vv-agendar-btn" data-service="felina">Agendar</button>
+        </div>
+
+        <div class="vv-card">
+          <h3>Vacina contra giardíase</h3>
+          <p>Previne infecções intestinais.</p>
+          <button class="vv-agendar-btn" data-service="giardiase">Agendar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+<footer class="vt-footer">
+      <div class="vt-social-icons">
+        <img src="/img/facebook.svg" alt="Facebook">
+        <img src="/img/instagram.svg" alt="Instagram">
+        <img src="/img/whatsapp.svg" alt="WhatsApp">
+      </div>
+
+      <hr>
+
+      <img src="/img/LogoVetVita.png" class="vt-footer-logo" alt="VetVita">
+
+      <p>©VetVita todos os direitos reservados</p>
+    </footer>
   </div>
 
   <!-- Modal de Instalação -->
