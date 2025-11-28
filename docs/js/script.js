@@ -293,7 +293,8 @@ class VetVitaApp {
   // ===== SERVICE WORKER =====
   registerServiceWorker() {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
+      navigator.serviceWorker.register('./service-worker.js')
+
         .then(reg => console.log('Service Worker registrado:', reg.scope))
         .catch(err => console.warn('Erro no Service Worker:', err));
     }

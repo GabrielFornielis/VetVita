@@ -2,7 +2,7 @@
   "name": "VetVita",
   "short_name": "VetVita",
   "description": "Hospital veterinário digital - PWA VetVita",
-  "start_url": "/?source=pwa",
+  "start_url": "./?source=pwa",
   "display": "standalone",
   "background_color": "#faf3df",
   "theme_color": "#6b8f4a",

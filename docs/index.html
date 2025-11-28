@@ -5,24 +5,25 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
   <title>VetVita – Saúde Animal com Responsabilidade e Qualidade</title>
 
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/png" href="/img/icons/IcoVetVita192x192.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="img/icons/IcoVetVita192x192.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
 </head>
+<body>
   <!-- PÁGINA INICIAL VETVITA -->
   <div id="main-zoone" class="site-root">
     <header class="vt-header">
       <div class="vt-logo-area">
-        <img src="/img/LogoVetVita.png" alt="VetVita" class="vt-logo">
+        <img src="img/LogoVetVita.png" alt="VetVita" class="vt-logo">
       </div>
 
       <nav class="vt-nav">
         <a href="#" data-page="home">Home</a>
         <a href="#contato" data-page="contato">Contato</a>
         <a href="#empresa" data-page="empresa">Empresa</a>
-        <img class="vt-user-icon" src="/img/icon.png" alt="Perfil">
+        <img class="vt-user-icon" src="img/icon.png" alt="Perfil">
       </nav>
     </header>
 
@@ -39,7 +40,7 @@
         </div>
 
         <div class="vt-hero-image">
-          <img src="/img/gato.png" alt="Gato" class="hero-pet-img" />
+          <img src="img/gato.png" alt="Gato" class="hero-pet-img" />
         </div>
       </div>
     </section>
@@ -104,7 +105,7 @@
 
 <section class="vt-about">
     <div class="about-image">
-        <img src="/img/cachorro.png" alt="cachorro">
+        <img src="img/cachorro.png" alt="cachorro">
     </div>
 
     <div class="about-text" id="empresa">
@@ -128,215 +129,213 @@
     </div>
 </section>
 
-
-
-    <!-- FOOTER -->
-    <footer class="vt-footer">
-      <div class="vt-social-icons">
-        <img src="/img/facebook.svg" alt="Facebook">
-        <img src="/img/instagram.svg" alt="Instagram">
-        <img src="/img/whatsapp.svg" alt="WhatsApp">
-      </div>
-
-      <hr>
-
-      <img src="/img/LogoVetVita.png" class="vt-footer-logo" alt="VetVita">
-
-      <p>©VetVita todos os direitos reservados</p>
-    </footer>
-  </div>
-
-    <!-- PÁGINA VETVITA APP ATUALIZADA -->
-  <div id="vetvita-app" class="hidden">
-    <!-- HEADER -->
-    <header class="vt-header">
-      <div class="vt-logo-area">
-        <img src="/img/LogoVetVita.png" alt="VetVita" class="vt-logo">
-      </div>
-
-      <nav class="vt-nav">
-        <a href="#" data-page="home">Home</a>
-        <a href="#contato" data-page="contato">Contato</a>
-        <a href="#empresa" data-page="empresa">Empresa</a>
-        <img class="vt-user-icon" src="/img/icon.png" alt="Perfil" onclick="openPopup()">
-
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="vv-hero">
-      <div class="vv-hero-content">
-        <div class="vv-hero-text">
-          <h1>Seu pet em <br>boas patas.</h1>
-          <p>
-            Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade.
-            Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias
-            e exames especializados, garantindo a saúde e o bem-estar do seu pet.
-          </p>
-        </div>
-
-        <div class="vv-hero-img">
-          <img src="/img/gato.png" alt="Gato" class="hero-pet-img">
-        </div>
-      </div>
-    </section>
-
-    <!-- CARD DE CADASTRO -->
-    <section class="vv-cadastro-section">
-      <div class="vv-cadastro-container">
-        <div class="vv-cadastro-info">
-          <h2>Cadastre-se para <br>acessar nossos <br>serviços completos.</h2>
-          <p>
-            Caso ainda não esteja inscrito, considere se cadastrar em nosso site para ter acesso a
-            todos os nossos serviços e agendar consultas, exames e muito mais.
-          </p>
-          <div class="link">
-          <p>Já tem uma conta?</p><a href="#" class="vv-login-link" onclick="openPopup()"> Entre aqui.</a>
-          </div>
-        </div>
-
-        <form class="vv-cadastro-form">
-          <input type="text" placeholder="Informe seu nome" id="vv-nome">
-          <input type="email" placeholder="Informe seu email" id="vv-email">
-          <input type="text" placeholder="Informe seu CPF" id="vv-cpf">
-          <input type="password" placeholder="Crie uma senha" id="vv-senha">
-
-          <button type="submit" class="vv-btn-cadastrar" id="vv-btnCadastro">Cadastrar-se já</button>
-
-            <div id="google_login" class="vv-btn-google"></div>
-
-          <div class="vv-mini-logo">
-            <img src="/img/LogoVetVita.png"  alt="VetVita">
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- CONSULTAS -->
-    <section class="vv-servicos">
-      <h2>Consultas veterinárias</h2>
-
-      <div class="vv-cards">
-        <div class="vv-card">
-          <h3>Consulta clínica geral</h3>
-          <p>Avaliação completa da saúde do pet.</p>
-          <button class="vv-agendar-btn" data-service="consulta-geral">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Consulta de emergência</h3>
-          <p>Atendimento rápido para casos urgentes.</p>
-          <button class="vv-agendar-btn" data-service="emergencia">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Consulta especializada em dermatologia</h3>
-          <p>Para tratar alergias, coceiras e problemas de pele.</p>
-          <button class="vv-agendar-btn" data-service="dermatologia">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Acompanhamento geriátrico</h3>
-          <p>Acompanhamento de animais idosos.</p>
-          <button class="vv-agendar-btn" data-service="geriatria">Agendar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXAMES -->
-    <section class="vv-exames">
-      <h2>Exames especializados</h2>
-
-      <div class="vv-cards vv-cards-green">
-        <div class="vv-card">
-          <h3>Exame de sangue completo</h3>
-          <p>Para detectar infecções e avaliar a saúde geral.</p>
-          <button class="vv-agendar-btn" data-service="exame-sangue">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Ultrassonografia abdominal</h3>
-          <p>Visualização interna de órgãos.</p>
-          <button class="vv-agendar-btn" data-service="ultrassom">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Raio-X digital</h3>
-          <p>Para diagnóstico de fraturas e problemas ósseos.</p>
-          <button class="vv-agendar-btn" data-service="raio-x">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Eletrocardiograma (ECG)</h3>
-          <p>Avaliação do ritmo cardíaco.</p>
-          <button class="vv-agendar-btn" data-service="ecg">Agendar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- VACINAS -->
-    <section class="vv-vacinas">
-      <h2>Vacinas Comuns</h2>
-
-      <div class="vv-cards vv-cards-orange">
-        <div class="vv-card">
-          <h3>Vacina V8 ou V10 (para cães)</h3>
-          <p>Proteção contra doenças virais graves.</p>
-          <button class="vv-agendar-btn" data-service="v8-v10">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Vacina antirrábica</h3>
-          <p>Obrigatória e essencial para todos os pets.</p>
-          <button class="vv-agendar-btn" data-service="raiva">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Vacina tríplice felina (V3 ou V4)</h3>
-          <p>Proteção básica para gatos.</p>
-          <button class="vv-agendar-btn" data-service="felina">Agendar</button>
-        </div>
-
-        <div class="vv-card">
-          <h3>Vacina contra giardíase</h3>
-          <p>Previne infecções intestinais.</p>
-          <button class="vv-agendar-btn" data-service="giardiase">Agendar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="vt-footer">
-      <div class="vt-social-icons">
-        <img src="/img/facebook.svg" alt="Facebook">
-        <img src="/img/instagram.svg" alt="Instagram">
-        <img src="/img/whatsapp.svg" alt="WhatsApp">
-      </div>
-
-      <hr>
-
-      <img src="/img/LogoVetVita.png" class="vt-footer-logo" alt="VetVita">
-
-      <p>©VetVita todos os direitos reservados</p>
-    </footer>
+  <div class="vt-social-icons">
+    <img src="img/facebook.svg" alt="Facebook">
+    <img src="img/instagram.svg" alt="Instagram">
+    <img src="img/whatsapp.svg" alt="WhatsApp">
   </div>
 
-  <!-- Modal de Instalação -->
-  <div id="install-modal" class="modal hidden">
-    <div class="modal-content">
-      <h3>Instalar VetVita</h3>
-      <p>Deseja instalar o aplicativo VetVita para uma experiência melhor?</p>
-      <div class="modal-buttons">
-        <button id="install-confirm" class="btn btn-primary">Instalar Agora</button>
-        <button id="install-cancel" class="btn btn-secondary">Agora Não</button>
+  <hr>
+
+  <img src="img/LogoVetVita.png" class="vt-footer-logo" alt="VetVita">
+
+  <p>©VetVita todos os direitos reservados</p>
+</footer>
+</div>
+
+<!-- PÁGINA VETVITA APP ATUALIZADA -->
+<div id="vetvita-app" class="hidden">
+  <!-- HEADER -->
+  <header class="vt-header">
+    <div class="vt-logo-area">
+      <img src="img/LogoVetVita.png" alt="VetVita" class="vt-logo">
+    </div>
+
+    <nav class="vt-nav">
+      <a href="#" data-page="home">Home</a>
+      <a href="#contato" data-page="contato">Contato</a>
+      <a href="#empresa" data-page="empresa">Empresa</a>
+      <img class="vt-user-icon" src="img/icon.png" alt="Perfil" onclick="openPopup()">
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="vv-hero">
+    <div class="vv-hero-content">
+      <div class="vv-hero-text">
+        <h1>Seu pet em <br>boas patas.</h1>
+        <p>
+          Na VetVita, acreditamos que cada animal merece cuidado, carinho e atenção de qualidade.
+          Nosso hospital veterinário oferece serviços completos, desde consultas e vacinas até cirurgias
+          e exames especializados, garantindo a saúde e o bem-estar do seu pet.
+        </p>
+      </div>
+
+      <div class="vv-hero-img">
+        <img src="img/gato.png" alt="Gato" class="hero-pet-img">
       </div>
     </div>
+  </section>
+
+  <!-- CARD DE CADASTRO -->
+  <section class="vv-cadastro-section">
+    <div class="vv-cadastro-container">
+      <div class="vv-cadastro-info">
+        <h2>Cadastre-se para <br>acessar nossos <br>serviços completos.</h2>
+        <p>
+          Caso ainda não esteja inscrito, considere se cadastrar em nosso site para ter acesso a
+          todos os nossos serviços e agendar consultas, exames e muito mais.
+        </p>
+        <div class="link">
+        <p>Já tem uma conta?</p><a href="#" class="vv-login-link" onclick="openPopup()"> Entre aqui.</a>
+        </div>
+      </div>
+
+      <form class="vv-cadastro-form">
+        <input type="text" placeholder="Informe seu nome" id="vv-nome">
+        <input type="email" placeholder="Informe seu email" id="vv-email">
+        <input type="text" placeholder="Informe seu CPF" id="vv-cpf">
+        <input type="password" placeholder="Crie uma senha" id="vv-senha">
+
+        <button type="submit" class="vv-btn-cadastrar" id="vv-btnCadastro">Cadastrar-se já</button>
+
+          <div id="google_login" class="vv-btn-google"></div>
+
+        <div class="vv-mini-logo">
+          <img src="img/LogoVetVita.png"  alt="VetVita">
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONSULTAS -->
+  <section class="vv-servicos">
+    <h2>Consultas veterinárias</h2>
+
+    <div class="vv-cards">
+      <div class="vv-card">
+        <h3>Consulta clínica geral</h3>
+        <p>Avaliação completa da saúde do pet.</p>
+        <button class="vv-agendar-btn" data-service="consulta-geral">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Consulta de emergência</h3>
+        <p>Atendimento rápido para casos urgentes.</p>
+        <button class="vv-agendar-btn" data-service="emergencia">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Consulta especializada em dermatologia</h3>
+        <p>Para tratar alergias, coceiras e problemas de pele.</p>
+        <button class="vv-agendar-btn" data-service="dermatologia">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Acompanhamento geriátrico</h3>
+        <p>Acompanhamento de animais idosos.</p>
+        <button class="vv-agendar-btn" data-service="geriatria">Agendar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMES -->
+  <section class="vv-exames">
+    <h2>Exames especializados</h2>
+
+    <div class="vv-cards vv-cards-green">
+      <div class="vv-card">
+        <h3>Exame de sangue completo</h3>
+        <p>Para detectar infecções e avaliar a saúde geral.</p>
+        <button class="vv-agendar-btn" data-service="exame-sangue">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Ultrassonografia abdominal</h3>
+        <p>Visualização interna de órgãos.</p>
+        <button class="vv-agendar-btn" data-service="ultrassom">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Raio-X digital</h3>
+        <p>Para diagnóstico de fraturas e problemas ósseos.</p>
+        <button class="vv-agendar-btn" data-service="raio-x">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Eletrocardiograma (ECG)</h3>
+        <p>Avaliação do ritmo cardíaco.</p>
+        <button class="vv-agendar-btn" data-service="ecg">Agendar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VACINAS -->
+  <section class="vv-vacinas">
+    <h2>Vacinas Comuns</h2>
+
+    <div class="vv-cards vv-cards-orange">
+      <div class="vv-card">
+        <h3>Vacina V8 ou V10 (para cães)</h3>
+        <p>Proteção contra doenças virais graves.</p>
+        <button class="vv-agendar-btn" data-service="v8-v10">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Vacina antirrábica</h3>
+        <p>Obrigatória e essencial para todos os pets.</p>
+        <button class="vv-agendar-btn" data-service="raiva">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Vacina tríplice felina (V3 ou V4)</h3>
+        <p>Proteção básica para gatos.</p>
+        <button class="vv-agendar-btn" data-service="felina">Agendar</button>
+      </div>
+
+      <div class="vv-card">
+        <h3>Vacina contra giardíase</h3>
+        <p>Previne infecções intestinais.</p>
+        <button class="vv-agendar-btn" data-service="giardiase">Agendar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="vt-footer">
+    <div class="vt-social-icons">
+      <img src="img/facebook.svg" alt="Facebook">
+      <img src="img/instagram.svg" alt="Instagram">
+      <img src="img/whatsapp.svg" alt="WhatsApp">
+    </div>
+
+    <hr>
+
+    <img src="img/LogoVetVita.png" class="vt-footer-logo" alt="VetVita">
+
+    <p>©VetVita todos os direitos reservados</p>
+  </footer>
+</div>
+
+<!-- Modal de Instalação -->
+<div id="install-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Instalar VetVita</h3>
+    <p>Deseja instalar o aplicativo VetVita para uma experiência melhor?</p>
+    <div class="modal-buttons">
+      <button id="install-confirm" class="btn btn-primary">Instalar Agora</button>
+      <button id="install-cancel" class="btn btn-secondary">Agora Não</button>
+    </div>
   </div>
+</div>
 
-  <div id="overlay" class="overlay hidden"></div>
+<div id="overlay" class="overlay hidden"></div>
 
-  <!-- POPUP DE LOGIN -->
-<div id="loginPopup" class="popup-overlay">
+<!-- POPUP DE LOGIN -->
+<div id="login-popup" class="popup-overlay">
     <div class="popup-box">
         <h2>Entre com sua conta VetVita</h2>
 
@@ -368,55 +367,35 @@
     </div>
 </div>
 
-
-  <script src="/js/script.js"></script>
-  <script>
-  function handleCredentialResponse(response) {
-      // Aqui vem o token codificado JWT
-      const data = parseJwt(response.credential);
-
-      console.log("Usuário logado:", data);
-
-      // Aqui você pode:
-      // • salvar em sessão
-      // • enviar ao backend
-      // • redirecionar usuário
-      alert("Bem-vindo, " + data.name + "!");
-  }
-
-  // Decodificar JSON Web Token
-  function parseJwt(token) {
-      return JSON.parse(atob(token.split('.')[1]));
-  }
-
-  // Inicializa o botão Google
-  window.onload = function () {
-      google.accounts.id.initialize({
-          client_id: "838658462754-at81q9id10d2hq6kdh0ouoeucpctkdar.apps.googleusercontent.com",
-          callback: handleCredentialResponse
-      });
-
-      google.accounts.id.renderButton(
-          document.getElementById("google_login"),
-          {
-              theme: "outline",
-              size: "large",
-              width: "345",
-              shape: "pill"
-          }
-      );
-  };
-</script>
+<script src="js/script.js"></script>
 <script>
-function openPopup() {
-    document.getElementById("loginPopup").style.display = "flex";
+function handleCredentialResponse(response) {
+    const data = parseJwt(response.credential);
+    console.log("Usuário logado:", data);
+    alert("Bem-vindo, " + data.name + "!");
 }
 
-function closePopup() {
-    document.getElementById("loginPopup").style.display = "none";
+function parseJwt(token) {
+    return JSON.parse(atob(token.split('.')[1]));
 }
-</script>
-<script>
+
+window.onload = function () {
+    google.accounts.id.initialize({
+        client_id: "838658462754-at81q9id10d2hq6kdh0ouoeucpctkdar.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+    });
+
+    google.accounts.id.renderButton(
+        document.getElementById("google_login"),
+        {
+            theme: "outline",
+            size: "large",
+            width: "345",
+            shape: "pill"
+        }
+    );
+};
+
 /* -------- MENU ABRIR/FECHAR -------- */
 document.getElementById("btn-acessibilidade").onclick = () => {
     const menu = document.getElementById("acessibilidade-menu");
@@ -428,7 +407,6 @@ let vozFeminina = null;
 
 function carregarVozes() {
     const vozes = speechSynthesis.getVoices();
-
     vozFeminina =
         vozes.find(v => v.lang === "pt-BR" && v.name.toLowerCase().includes("female")) ||
         vozes.find(v => v.lang === "pt-BR" && v.name.toLowerCase().includes("brasil")) ||
@@ -443,27 +421,21 @@ carregarVozes();
 /* -------- LER SELEÇÃO -------- */
 function lerSelecao() {
     const texto = window.getSelection().toString().trim();
-
     if (!texto) {
         alert("Selecione um texto para ser lido.");
         return;
     }
-
     const msg = new SpeechSynthesisUtterance(texto);
     msg.lang = "pt-BR";
     msg.rate = 1;
     msg.pitch = 1;
-
     if (vozFeminina) msg.voice = vozFeminina;
-
     speechSynthesis.cancel();
     speechSynthesis.speak(msg);
 }
 
 document.getElementById("ler-selecao").onclick = lerSelecao;
 </script>
-
-
 
 </body>
 </html>
